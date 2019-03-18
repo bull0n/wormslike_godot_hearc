@@ -12,7 +12,7 @@ public class RocketLauncher : Weapon
 
     public override void _Ready()
     {
-        PackedScene rocketScene = (PackedScene)ResourceLoader.Load("res://scenes/Rocket.tscn");
+        PackedScene rocketScene = (PackedScene)ResourceLoader.Load("res://Scenes/Rocket.tscn");
         Position2D position = this.GetChild<Position2D>(0);
         position.AddChild(rocketScene.Instance());
     }
