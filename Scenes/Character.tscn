@@ -173,17 +173,17 @@ position = Vector2( 11.6913, -51.7756 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="head" type="Sprite" parent="sprites"]
-position = Vector2( -43.4248, -77.0389 )
+position = Vector2( -43.4248, -79.7383 )
 scale = Vector2( 0.82286, 0.82286 )
 z_index = 1
 texture = ExtResource( 2 )
 
 [node name="torso" type="Sprite" parent="sprites"]
-position = Vector2( -13.3612, 269.964 )
+position = Vector2( -13.3612, 267.03 )
 texture = ExtResource( 3 )
 
 [node name="arm_right" type="Sprite" parent="sprites"]
-position = Vector2( 86.5121, 176.124 )
+position = Vector2( 86.5122, 174.774 )
 rotation = 6.1808
 z_index = -1
 texture = ExtResource( 4 )
@@ -191,7 +191,7 @@ centered = false
 offset = Vector2( -40, -50 )
 
 [node name="arm_left" type="Sprite" parent="sprites"]
-position = Vector2( -129, 182.615 )
+position = Vector2( -129, 181.265 )
 rotation = 0.085135
 texture = ExtResource( 5 )
 centered = false
@@ -215,7 +215,7 @@ position = Vector2( 0.866824, 24.1653 )
 z_index = 1
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="animation_player" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 3 )
 anims/run = SubResource( 2 )
