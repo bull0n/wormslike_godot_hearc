@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Ammo/Rocket.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Weapons/rocket.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 100.0
+
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 19.7406
 height = 164.678
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Rocket" type="RigidBody2D"]
 mode = 1
+physics_material_override = SubResource( 1 )
 gravity_scale = 9.8
 script = ExtResource( 1 )
 
@@ -19,5 +23,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.8147e-006, 0 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+one_way_collision_margin = 0.0
 

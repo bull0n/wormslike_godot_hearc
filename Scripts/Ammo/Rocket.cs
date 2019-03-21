@@ -8,7 +8,7 @@ public class Rocket : Ammo
 
     private bool launched = false;
 
-    public Rocket() : base(RADIUS, DAMAGE)
+    public Rocket() : base(Vector2.Zero, RADIUS, DAMAGE)
     {
 
     }
@@ -18,22 +18,11 @@ public class Rocket : Ammo
         GD.Print("Rocket");
     }
 
-    public override void _Input(InputEvent inputEvent)
-    {
-        if(inputEvent.IsActionPressed("ui_select") && !launched)
-        {
-            Launch();
-        }
-    }
-
     public void Launch()
     {
-        Vector2 direction = new Vector2(Vector2.Right);
-        direction = direction.Rotated(this.GetParent().GetParent<RocketLauncher>().Rotation);
-        GD.Print(this.GetParent().GetParent<RocketLauncher>().Rotation);
-
         this.Mode = ModeEnum.Rigid;
-        this.ApplyImpulse(Vector2.Zero, direction * 5000);
+
+        this.ApplyImpulse(Vector2.Zero, Direction);
 
         launched = true;
     }
