@@ -64,7 +64,7 @@ public class Character : KinematicBody2D
         {
             this.animation.Play("fall");
         }
-        else if(this.velocity.y < /* GROUND DETECTION */)
+        else if(this.velocity.y < 0/* GROUND DETECTION */)
         {
             this.animation.Play("jump");
         }

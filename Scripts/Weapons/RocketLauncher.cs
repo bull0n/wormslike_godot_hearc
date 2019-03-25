@@ -4,7 +4,7 @@ using System;
 public class RocketLauncher : Weapon
 {
     private static readonly String WEAPON_NAME = "Rocket Launcher";
-    private static readonly String AMMO_SCENE_PATH = "res://scenes/Rocket.tscn";
+    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Rocket.tscn";
 
     private static readonly int FORCE_FACTOR = 5;
 

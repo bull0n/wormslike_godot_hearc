@@ -37,3 +37,4 @@ scale = Vector2( 0.982869, 0.571823 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 10, 10 )
+

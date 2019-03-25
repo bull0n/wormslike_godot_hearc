@@ -1,12 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/Character.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Character.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Skeleton/megaman/head.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Skeleton/megaman/body.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Skeleton/megaman/arm-right.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Skeleton/megaman/arm-left.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Skeleton/megaman/leg-left.png" type="Texture" id=6]
 [ext_resource path="res://Resources/Skeleton/megaman/leg-right.png" type="Texture" id=7]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 111.705
