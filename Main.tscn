@@ -26,7 +26,7 @@ position = Vector2( 0.025629, 0.269476 )
 shape = SubResource( 1 )
 
 [node name="RocketLauncher" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418.386, 231.175 )
+position = Vector2( 3260.37, 1801.25 )
 rotation = -6.46994
 
 [node name="Grenade" parent="." instance=ExtResource( 3 )]
@@ -35,5 +35,5 @@ rotation = -6.46994
 position = Vector2( -5.44775, -265.139 )
 scale = Vector2( 0.982869, 0.571823 )
 anchor_mode = 0
-zoom = Vector2( 5, 5 )
-
+current = true
+zoom = Vector2( 10, 10 )

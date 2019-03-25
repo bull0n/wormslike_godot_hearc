@@ -21,10 +21,8 @@ public abstract class Ammo : RigidBody2D
 
     public Vector2 Direction
     {
-        get{return direction;}
-        set {   this.direction = value;
-                this.direction = this.direction.Normalized();
-        }
+        get { return direction; }
+        set { this.direction = value; }
     }
 
     public int Radius

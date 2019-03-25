@@ -6,6 +6,10 @@ public class RocketLauncher : Weapon
     private static readonly String WEAPON_NAME = "Rocket Launcher";
     private static readonly String AMMO_SCENE_PATH = "res://scenes/Rocket.tscn";
 
+    private static readonly int FORCE_FACTOR = 5;
+
+    private int startTime = 0;
+
     public RocketLauncher(): base(WEAPON_NAME, null)
     {
     }
@@ -19,32 +23,34 @@ public class RocketLauncher : Weapon
     {
         if(inputEvent is InputEventMouseMotion eventMouseMotion)
         {
-            this.Rotation = 0;
-
-            Vector2 direction = eventMouseMotion.GlobalPosition - this.GlobalPosition;
-            GD.Print(direction);
-            float angle = Vector2.Right.AngleTo(direction.Normalized());
-            GD.Print(Mathf.Rad2Deg(angle));
-            this.Rotate(angle);
-            /*
-            Vector2 direction = eventMouseMotion.GlobalPosition - this.GlobalPosition;
-            float angle = Vector2.Right.AngleTo(direction.Normalized());
-
-            GD.Print(direction);
-            GD.Print(Mathf.Rad2Deg(angle));
-            this.Rotate(-angle);
-            */
+            Vector2 position = GetGlobalMousePosition();
+            LookAt(position);
+            Scale = new Vector2(1.0f, Mathf.Sign(GetMouseDirection().x));
         }
 
         if (inputEvent is InputEventMouseButton eventMouseButton)
         {
-            if(eventMouseButton.IsAction("shoot"))
+            if (eventMouseButton.IsActionReleased("shoot"))
             {
-                Vector2 direction = eventMouseButton.GlobalPosition - this.GlobalPosition;
-                Rocket rocket = LoadRocket(direction * 1000);
+                int elapsedTime = OS.GetSystemTimeMsecs() - startTime;
+
+                Vector2 direction = GetMouseDirection();
+                Rocket rocket = LoadRocket(direction * elapsedTime * FORCE_FACTOR);
                 rocket.Launch();
+
+                startTime = 0;
+            }
+
+            if (eventMouseButton.IsActionPressed("shoot"))
+            {
+                startTime = OS.GetSystemTimeMsecs();
             }
         }
+    }
+
+    public Vector2 GetMouseDirection()
+    {
+        return (GetGlobalMousePosition() - this.GetGlobalPosition()).Normalized();
     }
 
     public Rocket LoadRocket(Vector2 direction)

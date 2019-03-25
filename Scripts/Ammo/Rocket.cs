@@ -22,7 +22,7 @@ public class Rocket : Ammo
     {
         this.Mode = ModeEnum.Rigid;
 
-        this.ApplyImpulse(Vector2.Zero, Direction * 5000);
+        this.ApplyImpulse(Vector2.Zero, Direction);
 
         launched = true;
     }
