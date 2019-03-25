@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Terrain/Dirst.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/RocketLauncher.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Grenade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.2856, 10 )
 
 [node name="Main" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 519.674, 556.622 )
 scale = Vector2( 50, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Node2D/StaticBody2D"]
 position = Vector2( 0.0796738, 0.347794 )
@@ -32,9 +32,12 @@ rotation = -6.46994
 [node name="Grenade" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -5.44775, -265.139 )
+position = Vector2( -643.52, -366.297 )
 scale = Vector2( 0.982869, 0.571823 )
 anchor_mode = 0
 current = true
-zoom = Vector2( 10, 10 )
+zoom = Vector2( 3, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 251.643, -75.1744 )
 
