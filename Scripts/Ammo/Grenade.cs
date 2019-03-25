@@ -1,22 +1,22 @@
 using Godot;
 using System;
 
-public class Throwable : Ammo
+public class Grenade : Ammo
 {
     private int startTime = 0;
 
-    public Throwable(): this(1, 1)
+    public Grenade(): this(Vector2.Zero, 1, 1)
     {
         // nothing
     }
 
-    public Throwable(int radius, int damage): base(radius, damage)
+    public Grenade(Vector2 direction, int radius, int damage): base(direction, radius, damage)
     {
     }
 
     public override void _Ready()
     {
-        GD.Print("Throwable");
+        GD.Print("Grenade");
     }
 
     public override void _Input(InputEvent inputEvent)

@@ -22,6 +22,8 @@ public class Weapon : Node2D
         Ammo ammo = this.GetChild<Ammo>(0);
     }
 
+    
+
     public String WeaponName
     {
         get{ return weaponName; }
