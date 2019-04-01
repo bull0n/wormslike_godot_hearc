@@ -14,6 +14,7 @@ public class Character : KinematicBody2D
     private int MAX_RUN_SPEED = 3000;
 
     enum State { Idle, Running, Shooting, Falling, Jumping }
+    enum SelectableWeapon { Bazooka, Grenade, Gun }
 
 
     const int GRAVITY = 980;
@@ -29,6 +30,7 @@ public class Character : KinematicBody2D
     private RayCast2D groundDetection;
     private Sprite rightArm;
     private Node2D weapon;
+    private SelectableWeapon selectedWeapon;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -41,6 +43,8 @@ public class Character : KinematicBody2D
         this.sprites = (Node2D)GetNode("sprites");
         this.groundDetection = (RayCast2D)GetNode("ground_detection");
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
+        this.weapon = null;
+        this.selectedWeapon = SelectableWeapon.Grenade;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -78,7 +82,6 @@ public class Character : KinematicBody2D
         else if(this.state == State.Shooting)
         {
             this.animation.Stop();
-            GD.Print("hello2");
         }
         else
         {
@@ -148,8 +151,10 @@ public class Character : KinematicBody2D
         if(Input.IsActionPressed("shoot") && this.CanShoot())
         {
             this.state = State.Shooting;
+
+            this.InstantiateWeapon();
+
             Vector2 position = GetGlobalMousePosition();
-            //this.rightArm.LookAt(position);
             this.rightArm.SetRotation(this.rightArm.GetGlobalPosition().AngleToPoint(GetGlobalMousePosition()) + 90);
         }
     }
@@ -165,6 +170,29 @@ public class Character : KinematicBody2D
         {
             velocity = new Vector2();
         }
+    }
+
+    private void InstantiateWeapon() 
+    {       
+        if(this.weapon == null)
+        {
+            PackedScene weapon = null;
+            
+            if(this.selectedWeapon == SelectableWeapon.Bazooka)
+            {
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/RocketLauncher.tscn");
+            }
+            else if(this.selectedWeapon == SelectableWeapon.Grenade)
+            {
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Grenade.tscn");
+            }
+            
+            this.weapon = (Node2D)weapon.Instance();
+            this.rightArm.AddChild(this.weapon);
+            this.weapon.SetTransform(((Node2D)rightArm.GetNode("handle_weapon")).GetTransform());
+        }
+
+            //this.rightArm.RemoveChild(this.weapon);
     }
 
     private void setMovingState()
