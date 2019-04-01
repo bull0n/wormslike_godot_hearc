@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/Character.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Character.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Skeleton/megaman/head.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Skeleton/megaman/body.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Skeleton/megaman/arm-right.png" type="Texture" id=4]
@@ -9,10 +9,63 @@
 [ext_resource path="res://Resources/Skeleton/megaman/leg-right.png" type="Texture" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 111.705
-height = 187.065
+radius = 183.881
+height = 438.877
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
+resource_name = "fall"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprites/arm_right:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 240.0, 220.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprites/arm_left:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 120.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprites/leg_left:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 120.0, 90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprites/leg_right:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -120.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=2]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
@@ -63,9 +116,56 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -43.4247, -82.2692 ), Vector2( -43.425, -72.269 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("sprites/leg_right:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sprites/leg_left:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("sprites/arm_right:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("sprites/arm_left:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
-[sub_resource type="Animation" id=2]
-resource_name = "run"
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -166,57 +266,75 @@ tracks/7/keys = {
 }
 
 [node name="Node2D" type="KinematicBody2D"]
+position = Vector2( -1.5, 3 )
 script = ExtResource( 1 )
 
 [node name="sprites" type="Node2D" parent="."]
-position = Vector2( 11.6913, -51.7756 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 0, -51.776 )
 
 [node name="head" type="Sprite" parent="sprites"]
-position = Vector2( -43.4248, -79.7383 )
+position = Vector2( -43.4247, -81.5961 )
 scale = Vector2( 0.82286, 0.82286 )
 z_index = 1
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="torso" type="Sprite" parent="sprites"]
-position = Vector2( -13.3612, 267.03 )
+position = Vector2( -13.3613, 264.671 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="arm_right" type="Sprite" parent="sprites"]
-position = Vector2( 86.5122, 174.774 )
-rotation = 6.1808
+position = Vector2( 86.5122, 173.846 )
 z_index = -1
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( -40, -50 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="arm_left" type="Sprite" parent="sprites"]
-position = Vector2( -129, 181.265 )
-rotation = 0.085135
+position = Vector2( -129, 180.337 )
 texture = ExtResource( 5 )
 centered = false
 offset = Vector2( -100, -60 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="leg_left" type="Sprite" parent="sprites"]
 position = Vector2( -70.4878, 460.693 )
-rotation = 0.375343
 z_index = -1
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="leg_right" type="Sprite" parent="sprites"]
 position = Vector2( 32.1055, 454.352 )
-rotation = -0.375343
 z_index = -1
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0.866824, 24.1653 )
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( 7.10645, 88.9766 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-anims/idle = SubResource( 3 )
-anims/run = SubResource( 2 )
+autoplay = "fall"
+anims/fall = SubResource( 4 )
+anims/idle = SubResource( 2 )
+anims/run = SubResource( 3 )
+
+[node name="ground_detection" type="RayCast2D" parent="."]
+position = Vector2( 3, -3.776 )
+cast_to = Vector2( 0, 550 )
 
