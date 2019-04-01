@@ -28,6 +28,7 @@ public class Character : KinematicBody2D
     private Node2D sprites;
     private RayCast2D groundDetection;
     private Sprite rightArm;
+    private Node2D weapon;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -55,23 +56,29 @@ public class Character : KinematicBody2D
 
         this.Jump();
         this.ComputeVelocityAndMove();
+        this.setMovingState();
         this.Shoot();
         this.animate();
     }
 
     private void animate()
     {
-        if(this.velocity.y > 0 && !this.IsOnFloor())
+        if(this.state == State.Falling)
         {
             this.animation.Play("fall");
         }
-        else if(this.velocity.y < 0 && !this.IsOnFloor() && this.CanRunOrJump())
+        else if(this.state == State.Jumping)
         {
-            this.animation.Play("jump");
+            //this.animation.Play("jump");
         }
-        else if(this.velocity.x != 0)
+        else if(this.state == State.Running)
         {
             this.animation.Play("run");
+        }
+        else if(this.state == State.Shooting)
+        {
+            this.animation.Stop();
+            GD.Print("hello2");
         }
         else
         {
@@ -88,7 +95,7 @@ public class Character : KinematicBody2D
         }
     }
 
-    private float clamp(float val, float min, float max)
+    private float Clamp(float val, float min, float max)
     {
         if(val < min)
         {
@@ -109,7 +116,6 @@ public class Character : KinematicBody2D
         if(this.CanRunOrJump())
         {   
             this.state = State.Running;
-
             if(Input.IsActionPressed("ui_right"))
             {        
                 acceleration.x = ACCEL;
@@ -141,21 +147,43 @@ public class Character : KinematicBody2D
     {
         if(Input.IsActionPressed("shoot") && this.CanShoot())
         {
+            this.state = State.Shooting;
             Vector2 position = GetGlobalMousePosition();
-            this.rightArm.LookAt(position);
+            //this.rightArm.LookAt(position);
+            this.rightArm.SetRotation(this.rightArm.GetGlobalPosition().AngleToPoint(GetGlobalMousePosition()) + 90);
         }
     }
 
     private void ComputeVelocityAndMove()
     {
         velocity += acceleration;
-        velocity.x = this.clamp(velocity.x, -MAX_RUN_SPEED, MAX_RUN_SPEED);
-        velocity.y = this.clamp(velocity.y, -MAX_FALL_SPEED, MAX_FALL_SPEED);
+        velocity.x = this.Clamp(velocity.x, -MAX_RUN_SPEED, MAX_RUN_SPEED);
+        velocity.y = this.Clamp(velocity.y, -MAX_FALL_SPEED, MAX_FALL_SPEED);
         velocity = MoveAndSlide(velocity, UP);
 
         if (velocity.Length() < 2)
         {
             velocity = new Vector2();
+        }
+    }
+
+    private void setMovingState()
+    {
+        if(this.velocity.x != 0 && this.IsOnFloor())
+        {
+            this.state = State.Running;
+        }
+        else if(this.velocity.y < 0 && !this.IsOnFloor())
+        {
+            this.state = State.Jumping;
+        }
+        else if(this.velocity.y > 0 && !this.IsOnFloor())
+        {
+            this.state = State.Falling;
+        }
+        else 
+        {
+            this.state = State.Idle;
         }
     }
 
