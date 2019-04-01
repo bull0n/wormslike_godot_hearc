@@ -6,7 +6,7 @@ public class RocketLauncher : Weapon
     private static readonly String WEAPON_NAME = "Rocket Launcher";
     private static readonly String AMMO_SCENE_PATH = "res://Scenes/Rocket.tscn";
 
-    private static readonly int FORCE_FACTOR = 5;
+    private static readonly int STRENGTH_FACTOR = 5;
 
     private int startTime = 0;
 
@@ -35,8 +35,9 @@ public class RocketLauncher : Weapon
                 int elapsedTime = OS.GetSystemTimeMsecs() - startTime;
 
                 Vector2 direction = GetMouseDirection();
-                Rocket rocket = LoadRocket(direction * elapsedTime * FORCE_FACTOR);
-                rocket.Launch();
+                Rocket rocket = LoadRocket(direction);
+                rocket.LookAt(GetGlobalMousePosition());
+                rocket.Launch(elapsedTime * STRENGTH_FACTOR);
 
                 startTime = 0;
             }
@@ -59,10 +60,13 @@ public class RocketLauncher : Weapon
         Position2D position = this.GetChild<Position2D>(0);
 
         Rocket rocket = rocketScene.Instance() as Rocket;
+
+        rocket.GlobalPosition = position.GlobalPosition;
+        rocket.Direction = direction;
         this.WeaponAmmo = rocket as Ammo;
 
-        rocket.Direction = direction;
-        position.AddChild(rocket);
+        this.GetTree().GetRoot().AddChild(rocket);
+        GD.Print(this.GetTree().GetRoot().Name);
 
         return rocket;
     }

@@ -10,7 +10,6 @@ public class Rocket : Ammo
 
     public Rocket() : base(Vector2.Zero, RADIUS, DAMAGE)
     {
-
     }
 
     public override void _Ready()
@@ -18,11 +17,20 @@ public class Rocket : Ammo
         GD.Print("Rocket");
     }
 
-    public void Launch()
+    public override void _PhysicsProcess(float delta)
+    {
+        base._PhysicsProcess(delta);
+
+        Vector2 direction = GetLinearVelocity();
+        this.LookAt(this.Position + direction);
+    }
+
+    public void Launch(int strength)
     {
         this.Mode = ModeEnum.Rigid;
 
-        this.ApplyImpulse(Vector2.Zero, Direction);
+        this.ApplyImpulse(Vector2.Zero, Direction * strength);
+        this.ApplyTorqueImpulse((Direction * strength + Vector2.Down * GravityScale * Mass).Angle());
 
         launched = true;
     }
