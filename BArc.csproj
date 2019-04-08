@@ -54,7 +54,6 @@
     <Compile Include="Scripts\Ammo\Ammo.cs" />
     <Compile Include="Scripts\Ammo\Grenade.cs" />
     <Compile Include="Scripts\Ammo\Rocket.cs" />
-    <Compile Include="Scripts\Weapons\Rifle.cs" />
     <Compile Include="Scripts\Weapons\RocketLauncher.cs" />
     <Compile Include="Scripts\Weapons\Weapon.cs" />
   </ItemGroup>
