@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Weapon : Node2D
+public abstract class Weapon : Node2D
 {
     private String weaponName;
     private Ammo weaponAmmo;
@@ -22,7 +22,10 @@ public class Weapon : Node2D
         Ammo ammo = this.GetChild<Ammo>(0);
     }
 
-    
+    public abstract Ammo Load();
+
+    public abstract void StartShoot();
+    public abstract void EndShoot();
 
     public String WeaponName
     {
