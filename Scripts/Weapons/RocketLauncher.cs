@@ -25,9 +25,9 @@ public class RocketLauncher : Weapon
     {
         if(inputEvent is InputEventMouseMotion eventMouseMotion)
         {
-            Vector2 position = GetGlobalMousePosition();
-            LookAt(position);
-            Scale = new Vector2(1.0f, Mathf.Sign(GetMouseDirection().x));
+            //Vector2 position = GetGlobalMousePosition();
+            //LookAt(position);
+            //Scale = new Vector2(1.0f, Mathf.Sign(GetMouseDirection().x));
         }
 
         if (inputEvent is InputEventMouseButton eventMouseButton)

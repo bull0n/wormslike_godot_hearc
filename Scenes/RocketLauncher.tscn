@@ -10,5 +10,6 @@ script = ExtResource( 1 )
 position = Vector2( 154.017, -7.756 )
 
 [node name="Launcher" type="Sprite" parent="."]
+position = Vector2( 39, -83 )
 texture = ExtResource( 2 )
 

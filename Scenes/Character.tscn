@@ -12,7 +12,7 @@
 radius = 183.881
 height = 438.877
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 resource_name = "fall"
 length = 0.4
 loop = true
@@ -65,8 +65,7 @@ tracks/3/keys = {
 "values": [ -120.0, -90.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprites/torso:position")
@@ -165,7 +164,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -273,7 +272,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -51.776 )
 
 [node name="head" type="Sprite" parent="sprites"]
-position = Vector2( -43.4247, -81.5961 )
+position = Vector2( -43.4248, -77.6466 )
 scale = Vector2( 0.82286, 0.82286 )
 z_index = 1
 texture = ExtResource( 2 )
@@ -282,14 +281,15 @@ __meta__ = {
 }
 
 [node name="torso" type="Sprite" parent="sprites"]
-position = Vector2( -13.3613, 264.671 )
+position = Vector2( -13.3612, 269.626 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="arm_right" type="Sprite" parent="sprites"]
-position = Vector2( 86.5122, 173.846 )
+position = Vector2( 86.5121, 175.82 )
+rotation = 4.18879
 z_index = -1
 texture = ExtResource( 4 )
 centered = false
@@ -298,8 +298,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="handle_weapon" type="Position2D" parent="sprites/arm_right"]
+position = Vector2( 57.65, 153.381 )
+rotation = 1.22173
+
 [node name="arm_left" type="Sprite" parent="sprites"]
-position = Vector2( -129, 180.337 )
+position = Vector2( -129, 182.311 )
+rotation = 2.0944
 texture = ExtResource( 5 )
 centered = false
 offset = Vector2( -100, -60 )
@@ -309,6 +314,7 @@ __meta__ = {
 
 [node name="leg_left" type="Sprite" parent="sprites"]
 position = Vector2( -70.4878, 460.693 )
+rotation = 2.0944
 z_index = -1
 texture = ExtResource( 6 )
 __meta__ = {
@@ -317,6 +323,7 @@ __meta__ = {
 
 [node name="leg_right" type="Sprite" parent="sprites"]
 position = Vector2( 32.1055, 454.352 )
+rotation = -2.0944
 z_index = -1
 texture = ExtResource( 7 )
 __meta__ = {
@@ -330,9 +337,9 @@ shape = SubResource( 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 autoplay = "fall"
-anims/fall = SubResource( 4 )
-anims/idle = SubResource( 2 )
-anims/run = SubResource( 3 )
+anims/fall = SubResource( 5 )
+anims/idle = SubResource( 6 )
+anims/run = SubResource( 4 )
 
 [node name="ground_detection" type="RayCast2D" parent="."]
 position = Vector2( 3, -3.776 )
