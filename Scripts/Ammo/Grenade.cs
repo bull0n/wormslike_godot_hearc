@@ -5,12 +5,12 @@ public class Grenade : Ammo
 {
     private int startTime = 0;
 
-    public Grenade(): this(Vector2.Zero, 1, 1)
+    public Grenade(): this(1, 1)
     {
         // nothing
     }
 
-    public Grenade(Vector2 direction, int radius, int damage): base(direction, radius, damage)
+    public Grenade(int radius, int damage): base(radius, damage)
     {
     }
 
