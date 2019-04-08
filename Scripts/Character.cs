@@ -29,8 +29,9 @@ public class Character : KinematicBody2D
     private Node2D sprites;
     private RayCast2D groundDetection;
     private Sprite rightArm;
-    private Node2D weapon;
+    private Weapon weapon;
     private SelectableWeapon selectedWeapon;
+    private int startTime;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -44,7 +45,7 @@ public class Character : KinematicBody2D
         this.groundDetection = (RayCast2D)GetNode("ground_detection");
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
         this.weapon = null;
-        this.selectedWeapon = SelectableWeapon.Grenade;
+        this.selectedWeapon = SelectableWeapon.Bazooka;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -148,13 +149,25 @@ public class Character : KinematicBody2D
 
     private void Shoot()
     {
+        if(Input.IsActionJustReleased("shoot"))
+        {
+            int elapsedTime = OS.GetSystemTimeMsecs() - startTime;
+            this.weapon.Shoot(elapsedTime);
+        }
+
+        if(Input.IsActionJustPressed("shoot"))
+        {
+            this.startTime = OS.GetSystemTimeMsecs();
+
+            this.state = State.Shooting;
+            this.InstantiateWeapon();
+        }
+
         if(Input.IsActionPressed("shoot") && this.CanShoot())
         {
-            this.state = State.Shooting;
-
-            this.InstantiateWeapon();
-
             Vector2 position = GetGlobalMousePosition();
+
+            this.state = State.Shooting;
             this.rightArm.SetRotation(this.rightArm.GetGlobalPosition().AngleToPoint(GetGlobalMousePosition()) + 90);
         }
     }
@@ -187,7 +200,7 @@ public class Character : KinematicBody2D
                 weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Grenade.tscn");
             }
             
-            this.weapon = (Node2D)weapon.Instance();
+            this.weapon = (Weapon)weapon.Instance();
             this.rightArm.AddChild(this.weapon);
             this.weapon.SetTransform(((Node2D)rightArm.GetNode("handle_weapon")).GetTransform());
         }
