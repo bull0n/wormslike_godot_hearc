@@ -3,11 +3,14 @@ using System;
 
 public class Grenade : Ammo
 {
-    private int startTime = 0;
+    private static readonly int RADIUS = 5;
+    private static readonly int DAMAGE = 35;
+
+    private bool launched = false;
 
     public Grenade(): this(1, 1)
     {
-        // nothing
+        // Nothing
     }
 
     public Grenade(int radius, int damage): base(radius, damage)
@@ -16,22 +19,21 @@ public class Grenade : Ammo
 
     public override void _Ready()
     {
-        GD.Print("Grenade");
     }
 
     public override void _Input(InputEvent inputEvent)
     {
-        if(inputEvent.IsActionReleased("ui_select"))
-        {
-            GD.Print("Shoot !");
-            int timeElapsed = OS.GetSystemTimeSecs() - startTime;
-            ApplyImpulse(Vector2.Zero, new Vector2(100, -600 * timeElapsed));
-        }
+        // Nothing
+    }
 
-        if (inputEvent.IsActionPressed("ui_select"))
-        {
-            GD.Print("Start loading...");
-            startTime = OS.GetSystemTimeSecs();
-        }
+    public override void Launch(Vector2 direction, int strength)
+    {
+        direction = direction.Normalized();
+        this.Mode = ModeEnum.Rigid;
+
+        this.ApplyImpulse(Vector2.Zero, direction * strength);
+        this.ApplyTorqueImpulse((direction * strength + Vector2.Down * GravityScale * Mass).Angle());
+
+        launched = true;
     }
 }

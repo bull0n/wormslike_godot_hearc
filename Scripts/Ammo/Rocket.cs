@@ -28,7 +28,7 @@ public class Rocket : Ammo
         }
     }
 
-    public void Launch(Vector2 direction, int strength)
+    public override void Launch(Vector2 direction, int strength)
     {
         direction = direction.Normalized();
         this.Mode = ModeEnum.Rigid;

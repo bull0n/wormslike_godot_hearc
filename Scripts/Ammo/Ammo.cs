@@ -17,6 +17,8 @@ public abstract class Ammo : RigidBody2D
         this.damage = damage;
     }
 
+    public abstract void Launch(Vector2 direction, int strength);
+
     public int Radius
     {
         get{return radius;}
