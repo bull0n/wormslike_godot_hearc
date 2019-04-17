@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Terrain/Dirst.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Weapons/RocketLauncher.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Ammo/Grenade.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/CameraController.cs" type="Script" id=4]
-[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/CameraController.cs" type="Script" id=2]
+[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.2856, 10 )
@@ -27,19 +25,13 @@ texture = ExtResource( 1 )
 position = Vector2( 0.025629, 0.269476 )
 shape = SubResource( 1 )
 
-[node name="RocketLauncher" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3260.37, 1801.25 )
-rotation = -6.46994
-
-[node name="Grenade" parent="." instance=ExtResource( 3 )]
-
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2( -643.52, -366.297 )
 scale = Vector2( 0.982869, 0.571823 )
 anchor_mode = 0
 current = true
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 251.643, -75.1744 )
 
