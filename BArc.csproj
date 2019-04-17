@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Ammo\RifleAmmo.cs" />
+    <Compile Include="Scripts\CameraController.cs" />
     <Compile Include="Scripts\Character.cs" />
     <Compile Include="Scripts\Ammo\Ammo.cs" />
     <Compile Include="Scripts\Ammo\Grenade.cs" />
