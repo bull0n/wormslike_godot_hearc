@@ -45,7 +45,7 @@ public class Character : KinematicBody2D
         this.groundDetection = (RayCast2D)GetNode("ground_detection");
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
         this.weapon = null;
-        this.selectedWeapon = SelectableWeapon.Bazooka;
+        this.selectedWeapon = SelectableWeapon.Grenade;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -197,7 +197,7 @@ public class Character : KinematicBody2D
             }
             else if(this.selectedWeapon == SelectableWeapon.Grenade)
             {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Grenade.tscn");
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/HandGrenade.tscn");
             }
             
             this.weapon = (Weapon)weapon.Instance();
