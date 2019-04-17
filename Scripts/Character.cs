@@ -14,7 +14,7 @@ public class Character : KinematicBody2D
     private int MAX_RUN_SPEED = 3000;
 
     enum State { Idle, Running, Shooting, Falling, Jumping }
-    enum SelectableWeapon { Bazooka, Grenade, Gun }
+    enum SelectableWeapon { Bazooka, Grenade, Rifle }
 
 
     const int GRAVITY = 980;
@@ -45,7 +45,7 @@ public class Character : KinematicBody2D
         this.groundDetection = (RayCast2D)GetNode("ground_detection");
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
         this.weapon = null;
-        this.selectedWeapon = SelectableWeapon.Grenade;
+        this.selectedWeapon = SelectableWeapon.Rifle;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -198,6 +198,10 @@ public class Character : KinematicBody2D
             else if(this.selectedWeapon == SelectableWeapon.Grenade)
             {
                 weapon = (PackedScene)ResourceLoader.Load("res://Scenes/HandGrenade.tscn");
+            }
+            else if(this.selectedWeapon == SelectableWeapon.Rifle)
+            {
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Rifle.tscn");
             }
             
             this.weapon = (Weapon)weapon.Instance();

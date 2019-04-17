@@ -12,7 +12,7 @@
 radius = 183.881
 height = 438.877
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "fall"
 length = 0.4
 loop = true
@@ -65,7 +65,7 @@ tracks/3/keys = {
 "values": [ -120.0, -90.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprites/torso:position")
@@ -337,8 +337,8 @@ shape = SubResource( 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 autoplay = "fall"
-anims/fall = SubResource( 5 )
-anims/idle = SubResource( 6 )
+anims/fall = SubResource( 2 )
+anims/idle = SubResource( 3 )
 anims/run = SubResource( 4 )
 
 [node name="ground_detection" type="RayCast2D" parent="."]
