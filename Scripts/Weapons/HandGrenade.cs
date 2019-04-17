@@ -4,7 +4,7 @@ using System;
 public class HandGrenade : Weapon
 {
     private static readonly String WEAPON_NAME = "Hand Grenade";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Grenade.tscn";
+    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/Grenade.tscn";
 
     private static readonly int STRENGTH_FACTOR = 2;
     private Position2D grenadeHolder = null;

@@ -4,7 +4,7 @@ using System;
 public class Rifle : Weapon
 {
     private static readonly String WEAPON_NAME = "Rifle";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/RifleAmmo.tscn";
+    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/RifleAmmo.tscn";
 
     private static readonly int STRENGTH_FACTOR = 5000;
     private Position2D rifleHolder = null;

@@ -193,15 +193,15 @@ public class Character : KinematicBody2D
             
             if(this.selectedWeapon == SelectableWeapon.Bazooka)
             {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/RocketLauncher.tscn");
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/RocketLauncher.tscn");
             }
             else if(this.selectedWeapon == SelectableWeapon.Grenade)
             {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/HandGrenade.tscn");
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/HandGrenade.tscn");
             }
             else if(this.selectedWeapon == SelectableWeapon.Rifle)
             {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Rifle.tscn");
+                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/Rifle.tscn");
             }
             
             this.weapon = (Weapon)weapon.Instance();
