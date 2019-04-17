@@ -56,6 +56,8 @@
     <Compile Include="Scripts\Ammo\Ammo.cs" />
     <Compile Include="Scripts\Ammo\Grenade.cs" />
     <Compile Include="Scripts\Ammo\Rocket.cs" />
+    <Compile Include="Scripts\GUI\HowToPlayMenu.cs" />
+    <Compile Include="Scripts\GUI\MainMenu.cs" />
     <Compile Include="Scripts\Weapons\HandGrenade.cs" />
     <Compile Include="Scripts\Weapons\Rifle.cs" />
     <Compile Include="Scripts\Weapons\RocketLauncher.cs" />
