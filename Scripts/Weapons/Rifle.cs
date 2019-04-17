@@ -3,19 +3,41 @@ using System;
 
 public class Rifle : Weapon
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    private static readonly String WEAPON_NAME = "Rifle";
+    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/RifleAmmo.tscn";
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    private static readonly int STRENGTH_FACTOR = 5000;
+    private Position2D rifleHolder = null;
+
+    public Rifle(): base(WEAPON_NAME, null)
     {
-        
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    public override void _Ready()
+    {
+        rifleHolder = this.GetChild<Position2D>(0);
+    }
+
+    public override void Load()
+    {
+        PackedScene rifleAmmoScene = (PackedScene)ResourceLoader.Load(AMMO_SCENE_PATH);
+
+        RifleAmmo rifleAmmo = rifleAmmoScene.Instance() as RifleAmmo;
+        rifleHolder.AddChild(rifleAmmo);
+        this.WeaponAmmo = rifleAmmo;
+    }
+
+    public override void Shoot(int elapsedTime)
+    {
+        Vector2 direction = GetMouseDirection();
+
+        this.Load();
+
+        rifleHolder.RemoveChild(WeaponAmmo);
+        GetTree().GetRoot().AddChild(WeaponAmmo);
+        WeaponAmmo.SetGlobalPosition(rifleHolder.GlobalPosition);
+
+        RifleAmmo rifleAmmo = WeaponAmmo as RifleAmmo;
+        rifleAmmo.Launch(direction, STRENGTH_FACTOR);
+    }
 }

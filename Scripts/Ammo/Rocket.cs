@@ -8,7 +8,7 @@ public class Rocket : Ammo
 
     private bool launched = false;
 
-    public Rocket() : base(Vector2.Zero, RADIUS, DAMAGE)
+    public Rocket() : base(RADIUS, DAMAGE)
     {
     }
 
@@ -21,16 +21,20 @@ public class Rocket : Ammo
     {
         base._PhysicsProcess(delta);
 
-        Vector2 direction = GetLinearVelocity();
-        this.LookAt(this.Position + direction);
+        if (launched)
+        {
+            Vector2 currentDirection = GetLinearVelocity();
+            this.LookAt(this.Position + currentDirection);
+        }
     }
 
-    public void Launch(int strength)
+    public override void Launch(Vector2 direction, int strength)
     {
+        direction = direction.Normalized();
         this.Mode = ModeEnum.Rigid;
 
-        this.ApplyImpulse(Vector2.Zero, Direction * strength);
-        this.ApplyTorqueImpulse((Direction * strength + Vector2.Down * GravityScale * Mass).Angle());
+        this.ApplyImpulse(Vector2.Zero, direction * strength);
+        this.ApplyTorqueImpulse((direction * strength + Vector2.Down * GravityScale * Mass).Angle());
 
         launched = true;
     }

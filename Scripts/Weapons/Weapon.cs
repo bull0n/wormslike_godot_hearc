@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Weapon : Node2D
+public abstract class Weapon : Node2D
 {
     private String weaponName;
     private Ammo weaponAmmo;
@@ -22,8 +22,15 @@ public class Weapon : Node2D
         Ammo ammo = this.GetChild<Ammo>(0);
     }
 
-    
+    public abstract void Load();
 
+    public abstract void Shoot(int elapsedTime);
+
+    public Vector2 GetMouseDirection()
+    {
+        return (GetGlobalMousePosition() - this.GetGlobalPosition()).Normalized();
+    }
+    
     public String WeaponName
     {
         get{ return weaponName; }

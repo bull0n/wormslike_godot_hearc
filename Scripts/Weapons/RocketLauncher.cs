@@ -4,11 +4,10 @@ using System;
 public class RocketLauncher : Weapon
 {
     private static readonly String WEAPON_NAME = "Rocket Launcher";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Rocket.tscn";
+    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/Rocket.tscn";
 
     private static readonly int STRENGTH_FACTOR = 5;
-
-    private int startTime = 0;
+    private Position2D rocketHolder = null;
 
     public RocketLauncher(): base(WEAPON_NAME, null)
     {
@@ -16,58 +15,31 @@ public class RocketLauncher : Weapon
 
     public override void _Ready()
     {
-
+        rocketHolder = this.GetChild<Position2D>(0);
     }
 
-    public override void _Input(InputEvent inputEvent)
-    {
-        if(inputEvent is InputEventMouseMotion eventMouseMotion)
-        {
-            //Vector2 position = GetGlobalMousePosition();
-            //LookAt(position);
-            //Scale = new Vector2(1.0f, Mathf.Sign(GetMouseDirection().x));
-        }
-
-        if (inputEvent is InputEventMouseButton eventMouseButton)
-        {
-            if (eventMouseButton.IsActionReleased("shoot"))
-            {
-                int elapsedTime = OS.GetSystemTimeMsecs() - startTime;
-
-                Vector2 direction = GetMouseDirection();
-                Rocket rocket = LoadRocket(direction);
-                rocket.LookAt(GetGlobalMousePosition());
-                rocket.Launch(elapsedTime * STRENGTH_FACTOR);
-
-                startTime = 0;
-            }
-
-            if (eventMouseButton.IsActionPressed("shoot"))
-            {
-                startTime = OS.GetSystemTimeMsecs();
-            }
-        }
-    }
-
-    public Vector2 GetMouseDirection()
-    {
-        return (GetGlobalMousePosition() - this.GetGlobalPosition()).Normalized();
-    }
-
-    public Rocket LoadRocket(Vector2 direction)
+    public override void Load()
     {
         PackedScene rocketScene = (PackedScene)ResourceLoader.Load(AMMO_SCENE_PATH);
-        Position2D position = this.GetChild<Position2D>(0);
 
         Rocket rocket = rocketScene.Instance() as Rocket;
+        rocketHolder.AddChild(rocket);
+        this.WeaponAmmo = rocket;
+    }
 
-        rocket.GlobalPosition = position.GlobalPosition;
-        rocket.Direction = direction;
-        this.WeaponAmmo = rocket as Ammo;
+    public override void Shoot(int elapsedTime)
+    {
+        Vector2 direction = GetMouseDirection();
+        
+        this.Load();
 
-        this.GetTree().GetRoot().AddChild(rocket);
-        GD.Print(this.GetTree().GetRoot().Name);
+        // Remove the rocket from the launcher and set it in the scene as a child of root
+        rocketHolder.RemoveChild(WeaponAmmo);
+        GetTree().GetRoot().AddChild(WeaponAmmo);
+        WeaponAmmo.SetGlobalPosition(rocketHolder.GlobalPosition);
 
-        return rocket;
+        // Launch the rocket (apply force)
+        Rocket rocket = WeaponAmmo as Rocket;
+        rocket.Launch(direction, elapsedTime * STRENGTH_FACTOR);
     }
 }

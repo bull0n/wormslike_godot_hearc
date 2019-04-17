@@ -1,19 +1,19 @@
 using Godot;
 using System;
 
-public class Grenade : Ammo
+public class RifleAmmo : Ammo
 {
     private static readonly int RADIUS = 5;
     private static readonly int DAMAGE = 35;
 
     private bool launched = false;
 
-    public Grenade(): this(1, 1)
+    public RifleAmmo(): this(1, 1)
     {
         // Nothing
     }
 
-    public Grenade(int radius, int damage): base(radius, damage)
+    public RifleAmmo(int radius, int damage): base(radius, damage)
     {
     }
 
@@ -32,7 +32,6 @@ public class Grenade : Ammo
         this.Mode = ModeEnum.Rigid;
 
         this.ApplyImpulse(Vector2.Zero, direction * strength);
-        this.ApplyTorqueImpulse((direction * strength + Vector2.Down * GravityScale * Mass).Angle());
 
         launched = true;
     }
