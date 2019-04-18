@@ -168,7 +168,10 @@ public class Character : KinematicBody2D
             Vector2 position = GetGlobalMousePosition();
 
             this.state = State.Shooting;
-            this.rightArm.SetRotation(this.rightArm.GetGlobalPosition().AngleToPoint(GetGlobalMousePosition()) + 90);
+
+            Vector2 vectorMouse = this.GetGlobalMousePosition() - this.GetGlobalPosition();
+            float angle = vectorMouse.AngleTo(Vector2.Down);
+            this.rightArm.SetRotation(this.sprites.Scale.x * (-angle) + Mathf.Pi / 12); // Mathf.Pi / 12 is the rotation offset of the arm ....
         }
     }
 
