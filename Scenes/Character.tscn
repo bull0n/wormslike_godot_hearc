@@ -264,7 +264,7 @@ tracks/7/keys = {
 "values": [ 356.444, 350.0 ]
 }
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 position = Vector2( -1.5, 3 )
 script = ExtResource( 1 )
 
@@ -288,6 +288,7 @@ __meta__ = {
 }
 
 [node name="arm_right" type="Sprite" parent="sprites"]
+editor/display_folded = true
 position = Vector2( 86.5121, 175.82 )
 rotation = 4.18879
 z_index = -1

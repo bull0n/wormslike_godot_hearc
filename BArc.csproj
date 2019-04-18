@@ -57,6 +57,7 @@
     <Compile Include="Scripts\Ammo\Grenade.cs" />
     <Compile Include="Scripts\Ammo\Rocket.cs" />
     <Compile Include="Scripts\DescructibleTerrain.cs" />
+    <Compile Include="Scripts\GUI\GameUI.cs" />
     <Compile Include="Scripts\GUI\HowToPlayMenu.cs" />
     <Compile Include="Scripts\GUI\MainMenu.cs" />
     <Compile Include="Scripts\Weapons\HandGrenade.cs" />

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GUI/GameUI.cs" type="Script" id=1]
+[ext_resource path="res://Resources/Weapons/shotgun.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Weapons/rocket_launcher.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Weapons/grenade.png" type="Texture" id=4]
+
+[node name="GameUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="WeaponsBag" type="VBoxContainer" parent="."]
+editor/display_folded = true
+margin_left = 2.57927
+margin_top = 154.511
+margin_right = 514.579
+margin_bottom = 1621.51
+rect_scale = Vector2( 0.2, 0.2 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Rifle" type="TextureRect" parent="WeaponsBag"]
+margin_top = 345.0
+margin_right = 512.0
+margin_bottom = 601.0
+texture = ExtResource( 2 )
+
+[node name="RocketLauncher" type="TextureRect" parent="WeaponsBag"]
+margin_top = 605.0
+margin_right = 512.0
+margin_bottom = 861.0
+texture = ExtResource( 3 )
+
+[node name="Grenade" type="TextureRect" parent="WeaponsBag"]
+margin_top = 865.0
+margin_right = 512.0
+margin_bottom = 1121.0
+texture = ExtResource( 4 )
+
+[node name="Timer" type="Label" parent="."]
+margin_left = 449.243
+margin_top = 24.3604
+margin_right = 561.243
+margin_bottom = 53.3604
+text = "Je suis un TIMER !"
+

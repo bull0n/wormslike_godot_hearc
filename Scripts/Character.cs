@@ -13,8 +13,8 @@ public class Character : KinematicBody2D
     [Export]
     private int MAX_RUN_SPEED = 3000;
 
-    enum State { Idle, Running, Shooting, Falling, Jumping }
-    enum SelectableWeapon { Bazooka, Grenade, Rifle }
+    private enum State { Idle, Running, Shooting, Falling, Jumping }
+    public enum SelectableWeapon { Bazooka, Grenade, Rifle }
 
 
     const int GRAVITY = 980;
@@ -190,29 +190,29 @@ public class Character : KinematicBody2D
 
     private void InstantiateWeapon() 
     {       
-        if(this.weapon == null)
+        PackedScene weapon = null;
+
+        if (rightArm.GetChildCount() > 1)
         {
-            PackedScene weapon = null;
-            
-            if(this.selectedWeapon == SelectableWeapon.Bazooka)
-            {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/RocketLauncher.tscn");
-            }
-            else if(this.selectedWeapon == SelectableWeapon.Grenade)
-            {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/HandGrenade.tscn");
-            }
-            else if(this.selectedWeapon == SelectableWeapon.Rifle)
-            {
-                weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/Rifle.tscn");
-            }
-            
-            this.weapon = (Weapon)weapon.Instance();
-            this.rightArm.AddChild(this.weapon);
-            this.weapon.SetTransform(((Node2D)rightArm.GetNode("handle_weapon")).GetTransform());
+            rightArm.RemoveChild(this.weapon);
         }
 
-            //this.rightArm.RemoveChild(this.weapon);
+        if (this.selectedWeapon == SelectableWeapon.Bazooka)
+        {
+            weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/RocketLauncher.tscn");
+        }
+        else if(this.selectedWeapon == SelectableWeapon.Grenade)
+        {
+            weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/HandGrenade.tscn");
+        }
+        else if(this.selectedWeapon == SelectableWeapon.Rifle)
+        {
+            weapon = (PackedScene)ResourceLoader.Load("res://Scenes/Weapons/Rifle.tscn");
+        }
+
+        this.weapon = (Weapon)weapon.Instance();
+        this.rightArm.AddChild(this.weapon);
+        this.weapon.SetTransform(((Node2D)rightArm.GetNode("handle_weapon")).GetTransform());
     }
 
     private void setMovingState()
@@ -244,4 +244,10 @@ public class Character : KinematicBody2D
     {
         return this.state == State.Idle;
     }
+	
+	public SelectableWeapon SelectedWeapon
+	{
+		get{return this.selectedWeapon;}
+		set{this.selectedWeapon = value;}
+	}
 }
