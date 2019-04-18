@@ -21,11 +21,6 @@ public class Grenade : Ammo
     {
     }
 
-    public override void _Input(InputEvent inputEvent)
-    {
-        // Nothing
-    }
-
     public override void Launch(Vector2 direction, int strength)
     {
         direction = direction.Normalized();
