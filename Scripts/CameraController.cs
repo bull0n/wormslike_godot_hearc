@@ -22,14 +22,14 @@ public class CameraController : Camera2D
         {
             InputEventMouseButton mouseButtonEvent = inputEvent as InputEventMouseButton;
 
-            if (mouseButtonEvent.IsAction("camera_zoom_in"))
+            if (mouseButtonEvent.IsAction("camera_zoom_out"))
             {
                 if (this.Zoom.x < MAX_ZOOM_OUT.x)
                 {
                     this.Zoom = this.Zoom + Vector2.One * ZOOM_SPEED;
                 }
             }
-            else if (mouseButtonEvent.IsAction("camera_zoom_out"))
+            else if (mouseButtonEvent.IsAction("camera_zoom_in"))
             {
                 if (this.Zoom.x > MAX_ZOOM_IN.x)
                 {
