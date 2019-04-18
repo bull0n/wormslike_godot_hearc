@@ -5,21 +5,20 @@ public class DescructibleTerrain : Area2D
 {
 
     [Export]
-    private int MIN_SIZE = 32;
+    private int MIN_SIZE = 8;
     private int size;
 
     DescructibleTerrain() 
     {
-        this.size = 256;
+        this.size = 32;
     }
 
     public override void _Ready()
     {
-        Connect("body_entered", this, "_on_Node2D_area_entered");
-        //this.Split();
+        Connect("body_entered", this, "_on_Node2D_body_entered");
     }
 
-    public void _on_Node2D_area_entered(PhysicsBody2D area)
+    public void _on_Node2D_body_entered(PhysicsBody2D area)
     {
         if(area.GetType() != typeof(Area2D))
         {
@@ -29,7 +28,7 @@ public class DescructibleTerrain : Area2D
 
     public void Split()
     {
-        if(size <= 16)
+        if(size <= this.MIN_SIZE)
         {
             this.QueueFree();
 		    return;
@@ -43,7 +42,7 @@ public class DescructibleTerrain : Area2D
             {
                 var newNode = this.MakeNewNode();
                 newNode.size = this.size;
-                float position = newNode.size / 2.0f;
+                float position = this.size / 2.0f;
                 
                 Vector2 relativePosition = new Vector2(position * i, position * j);
                 newNode.SetPosition(GetPosition() + relativePosition);
@@ -55,10 +54,10 @@ public class DescructibleTerrain : Area2D
 
     public DescructibleTerrain MakeNewNode()
     {
-
         DescructibleTerrain newNode = Duplicate() as DescructibleTerrain;
         GetParent().CallDeferred("add_child", newNode);
         newNode.SetScale(GetScale()/2.0f);
+
         return newNode;
     }
 
