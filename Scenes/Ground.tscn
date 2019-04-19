@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/DescructibleTerrain.tscn" type="PackedScene" id=1]
+
+[node name="Ground" type="Node2D"]
+
+[node name="Tile" type="Node" parent="."]
+
+[node name="DestructibleTerrain" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 352 )
+
+[node name="DestructibleTerrain16" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 384 )
+
+[node name="DestructibleTerrain17" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 352 )
+
+[node name="DestructibleTerrain13" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 384 )
+
+[node name="DestructibleTerrain14" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 384 )
+
+[node name="DestructibleTerrain15" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 384 )
+
+[node name="DestructibleTerrain2" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, 352 )
+
+[node name="DestructibleTerrain3" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, 352 )
+
+[node name="DestructibleTerrain4" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, 352 )
+
+[node name="DestructibleTerrain5" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, 352 )
+
+[node name="DestructibleTerrain6" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, 352 )
+
+[node name="DestructibleTerrain7" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, 352 )
+
+[node name="DestructibleTerrain8" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, 352 )
+
+[node name="DestructibleTerrain9" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, 352 )
+
+[node name="DestructibleTerrain10" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, 352 )
+
+[node name="DestructibleTerrain11" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 352 )
+
+[node name="DestructibleTerrain12" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 352 )
+
