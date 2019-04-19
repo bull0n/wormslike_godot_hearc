@@ -4,14 +4,14 @@
 [ext_resource path="res://Resources/Weapons/grenade.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 33.051
+radius = 46.6074
 
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 9.81
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -3.49902, -6.99811 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

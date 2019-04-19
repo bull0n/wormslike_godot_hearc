@@ -20,10 +20,16 @@ public class RifleAmmo : Ammo
     public override void _Ready()
     {
     }
-
-    public override void _Input(InputEvent inputEvent)
+	
+    public override void _PhysicsProcess(float delta)
     {
-        // Nothing
+        base._PhysicsProcess(delta);
+
+        if (launched)
+        {
+            Vector2 currentDirection = GetLinearVelocity();
+            this.LookAt(this.Position + currentDirection);
+        }
     }
 
     public override void Launch(Vector2 direction, int strength)

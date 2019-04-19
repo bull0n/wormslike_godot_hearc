@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Godot;
 
 public class Rocket : Ammo
@@ -14,7 +14,6 @@ public class Rocket : Ammo
 
     public override void _Ready()
     {
-        GD.Print("Rocket");
     }
 
     public override void _PhysicsProcess(float delta)

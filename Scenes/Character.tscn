@@ -264,11 +264,12 @@ tracks/7/keys = {
 "values": [ 356.444, 350.0 ]
 }
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 position = Vector2( -1.5, 3 )
 script = ExtResource( 1 )
 
 [node name="sprites" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -51.776 )
 
 [node name="head" type="Sprite" parent="sprites"]
@@ -288,6 +289,7 @@ __meta__ = {
 }
 
 [node name="arm_right" type="Sprite" parent="sprites"]
+editor/display_folded = true
 position = Vector2( 86.5121, 175.82 )
 rotation = 4.18879
 z_index = -1
@@ -344,4 +346,28 @@ anims/run = SubResource( 4 )
 [node name="ground_detection" type="RayCast2D" parent="."]
 position = Vector2( 3, -3.776 )
 cast_to = Vector2( 0, 550 )
+
+[node name="Team" type="Label" parent="."]
+margin_left = -336.0
+margin_top = -449.0
+margin_right = -201.0
+margin_bottom = -432.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 5, 5 )
+text = "HP : 100"
+align = 1
+valign = 1
+
+[node name="Health" type="Label" parent="."]
+margin_left = -336.0
+margin_top = -538.0
+margin_right = -201.0
+margin_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 5, 5 )
+text = "Team : RED"
+align = 1
+valign = 1
 

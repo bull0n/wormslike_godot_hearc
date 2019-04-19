@@ -18,8 +18,4 @@ shape = SubResource( 1 )
 position = Vector2( -6.10352e-05, 0 )
 z_as_relative = false
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[connection signal="area_entered" from="." to="." method="_on_Node2D_area_entered"]

@@ -7,9 +7,10 @@
 script = ExtResource( 1 )
 
 [node name="RocketHolder" type="Position2D" parent="."]
-position = Vector2( 154.017, -7.756 )
+position = Vector2( 248.491, -65.4903 )
 
 [node name="Launcher" type="Sprite" parent="."]
-position = Vector2( 39, -83 )
+position = Vector2( -55.6652, -25.7547 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 
