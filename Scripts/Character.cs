@@ -46,6 +46,7 @@ public class Character : KinematicBody2D
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
         this.weapon = null;
         this.selectedWeapon = SelectableWeapon.Rifle;
+        this.InstantiateWeapon();
     }
 
     public override void _PhysicsProcess(float delta)
@@ -160,7 +161,6 @@ public class Character : KinematicBody2D
             this.startTime = OS.GetSystemTimeMsecs();
 
             this.state = State.Shooting;
-            this.InstantiateWeapon();
         }
 
         if(Input.IsActionPressed("shoot") && this.CanShoot())
@@ -248,6 +248,9 @@ public class Character : KinematicBody2D
 	public SelectableWeapon SelectedWeapon
 	{
 		get{return this.selectedWeapon;}
-		set{this.selectedWeapon = value;}
+		set{
+            this.selectedWeapon = value;
+            this.InstantiateWeapon();
+        }
 	}
 }
