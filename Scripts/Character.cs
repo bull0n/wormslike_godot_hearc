@@ -32,6 +32,12 @@ public class Character : KinematicBody2D
     private Weapon weapon;
     private SelectableWeapon selectedWeapon;
     private int startTime;
+    public bool IsActive { get; set; }
+
+    public Character()
+    {
+        this.IsActive = false;
+    }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -59,11 +65,16 @@ public class Character : KinematicBody2D
         {
             velocity.x *= FRICTION;
         }
-
+        
         this.Jump();
         this.ComputeVelocityAndMove();
         this.setMovingState();
-        this.Shoot();
+
+        if(this.IsActive)
+        {
+            this.Shoot();
+        }
+
         this.animate();
     }
 
@@ -121,19 +132,24 @@ public class Character : KinematicBody2D
         if(this.CanRunOrJump())
         {   
             this.state = State.Running;
-            if(Input.IsActionPressed("ui_right"))
-            {        
-                acceleration.x = ACCEL;
-            }
-            else if(Input.IsActionPressed("ui_left"))
+
+            if(this.IsActive)
             {
-                acceleration.x = -ACCEL;
+                if(Input.IsActionPressed("ui_right"))
+                {        
+                    acceleration.x = ACCEL;
+                }
+                else if(Input.IsActionPressed("ui_left"))
+                {
+                    acceleration.x = -ACCEL;
+                }
+                else 
+                {
+                    acceleration.x = 0;
+                    this.state = State.Idle;
+                }
             }
-            else 
-            {
-                acceleration.x = 0;
-                this.state = State.Idle;
-            }
+
         }
     }
 
@@ -141,7 +157,7 @@ public class Character : KinematicBody2D
     {
         if(this.IsOnFloor())
         {
-            if(Input.IsActionPressed("ui_up"))
+            if(Input.IsActionPressed("ui_up") && this.IsActive)
             {
                 velocity.y = JUMP_VEL;
             }

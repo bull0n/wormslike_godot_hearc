@@ -62,17 +62,16 @@ public class Main : Node
             }
         }
 
-        this.iCurrentTeam = 0;
-        this.iCurrentPlayer = 0;
+        this.iCurrentTeam = -1;
+        this.iCurrentPlayer = -1;
 
-        EmitSignal(nameof(ChangeCurrentCharacter), this.teams[0][0]);
-        GD.Print("hello");
+        this.ChooseNextPlayer();
     }
 
     private void NextTurn()
     {
+        this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive = false;
         this.ChooseNextPlayer();
-
 
         this.TimeRemaining = this.timePerRound;
     }
@@ -91,6 +90,8 @@ public class Main : Node
             this.iCurrentPlayer = 0;
         }
 
+        this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive = true;
+        GD.Print(this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive);
         EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer]);
     }
 

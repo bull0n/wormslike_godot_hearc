@@ -25,8 +25,8 @@ public class GameUI : Control
     public override void _Input(InputEvent inputEvent)
     {
         base._Input(inputEvent);
-        GD.Print("KEY PRESSED : " + inputEvent.ToString());
-        GD.Print("Character : " + currentCharacter);
+        //GD.Print("KEY PRESSED : " + inputEvent.ToString());
+        //GD.Print("Character : " + currentCharacter);
         if (inputEvent is InputEventKey && this.currentCharacter != null)
         {
             InputEventKey keyEvent = inputEvent as InputEventKey;
