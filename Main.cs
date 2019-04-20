@@ -111,8 +111,8 @@ public class Main : Node
     private void ConnectSignal()
     {
         Node gameUI = this.GetNode("MainCamera").GetNode("GameUI"); 
-        Connect(nameof(TimePassedChanged), gameUI, "updateTime");
-        Connect(nameof(ChangeCurrentCharacter), gameUI, "setCharacter");
+        Connect(nameof(TimePassedChanged), gameUI, "UpdateTime");
+        Connect(nameof(ChangeCurrentCharacter), gameUI, "SetCharacter");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
