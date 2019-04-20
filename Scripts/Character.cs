@@ -14,6 +14,11 @@ public class Character : KinematicBody2D
     private int MAX_RUN_SPEED = 3000;
     [Export]
     private int FULL_HEALTH = 100;
+    [Export]
+    private int DIE_HEIGHT = 3000;
+
+    [Signal]
+    public delegate void CharacterDies(Character character);
 
     private Label lblHealth;
 
@@ -37,12 +42,24 @@ public class Character : KinematicBody2D
     private SelectableWeapon selectedWeapon;
     private Team currentTeam;
     private int startTime;
-    public bool IsActive { get; set; }
+    private bool canShoot;
+    private bool isActive;
     private int health;
+
+    public bool IsActive 
+    { 
+        get {return this.isActive;}
+        set 
+        {
+            this.canShoot = value;
+            this.isActive = value;
+        }
+    }
 
     public Character()
     {
         this.IsActive = false;
+        this.canShoot = true;
     }
 
 
@@ -81,7 +98,7 @@ public class Character : KinematicBody2D
         this.ComputeVelocityAndMove();
         this.setMovingState();
 
-        if(this.IsActive)
+        if(this.IsActive && this.canShoot)
         {
             this.Shoot();
         }
@@ -181,6 +198,7 @@ public class Character : KinematicBody2D
         {
             int elapsedTime = OS.GetSystemTimeMsecs() - startTime;
             this.weapon.Shoot(elapsedTime);
+            this.canShoot = false;
         }
 
         if(Input.IsActionJustPressed("shoot"))
@@ -212,6 +230,11 @@ public class Character : KinematicBody2D
         if (velocity.Length() < 2)
         {
             velocity = new Vector2();
+        }
+
+        if(this.Position.y >= DIE_HEIGHT)
+        {
+            this.Die();
         }
     }
 
@@ -284,6 +307,12 @@ public class Character : KinematicBody2D
     public bool IsDead()
     {
         return health <= 0;
+    }
+
+
+    public void Die()
+    {
+        EmitSignal(nameof(CharacterDies), this);
     }
 
     public int Health

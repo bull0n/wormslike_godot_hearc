@@ -61,6 +61,7 @@
     <Compile Include="Scripts\GUI\GameUI.cs" />
     <Compile Include="Scripts\GUI\HowToPlayMenu.cs" />
     <Compile Include="Scripts\GUI\MainMenu.cs" />
+    <Compile Include="Scripts\GUI\Win.cs" />
     <Compile Include="Scripts\Weapons\HandGrenade.cs" />
     <Compile Include="Scripts\Weapons\Rifle.cs" />
     <Compile Include="Scripts\Weapons\RocketLauncher.cs" />

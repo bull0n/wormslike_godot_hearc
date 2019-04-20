@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Main : Node
 {
     [Export]
-    public int numberOfPlayerPerTeam = 2;
+    public int numberOfPlayerPerTeam = 1;
     [Export]
     public int numberOfTeam = 2;
     [Export]
@@ -15,6 +15,7 @@ public class Main : Node
     public delegate void TimePassedChanged(int timeRemaining);
     [Signal]
     public delegate void ChangeCurrentCharacter(Character character);
+    private readonly string WIN_PATH = "res://Scenes/GUI/Win.tscn";
 
     private bool isRunning;
     private int iCurrentPlayer;
@@ -57,8 +58,9 @@ public class Main : Node
             for(int j = 0; j < this.numberOfPlayerPerTeam; j++)
             {
                 Character newPlayer = (Character)characterScene.Instance();
+                newPlayer.Connect("CharacterDies", this, "removeCharacter");
                 this.teams[i].Add(newPlayer);
-                newPlayer.SetPosition(new Vector2(-290, -90));
+                newPlayer.SetPosition(new Vector2(1500 + i * 300, -100));
                 this.AddChild(newPlayer);
                 newPlayer.SetTeam(currentTeam);
             }
@@ -76,6 +78,40 @@ public class Main : Node
         this.ChooseNextPlayer();
 
         this.TimeRemaining = this.timePerRound;
+    }
+
+    private void removeCharacter(Character character)
+    {
+        foreach(List<Character> team in this.teams)
+        {
+            team.Remove(character);
+            
+        }
+
+        character.QueueFree();
+
+        int numberOfTeamAlive = 0;
+        int iTeam = -1;
+        for(int i = 0; i < this.teams.Count; i++)
+        {
+            if(this.teams[i].Count > 0)
+            {
+                numberOfTeamAlive++;
+                iTeam = i;
+            }
+        }
+
+        if(numberOfTeamAlive == 1)
+        {
+            this.WinTrigger(iTeam);
+        }
+    }
+
+    private void WinTrigger(int iTeam)
+    {
+        Win.iTeamWon = iTeam;
+        var nextScene = (PackedScene)ResourceLoader.Load(WIN_PATH);
+        GetTree().ChangeSceneTo(nextScene);
     }
 
     private void ChooseNextPlayer()

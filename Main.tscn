@@ -31,7 +31,7 @@ position = Vector2( 0.025629, 0.269476 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -289.114, -78.7794 )
+position = Vector2( 1813.26, 17.9297 )
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2( -643.52, -366.297 )
@@ -46,5 +46,5 @@ margin_right = -0.695496
 margin_bottom = 3.32074
 
 [node name="Ground" parent="." instance=ExtResource( 6 )]
-position = Vector2( 299.219, -97.3364 )
+position = Vector2( 147.848, 461.896 )
 
