@@ -12,10 +12,14 @@ public class Character : KinematicBody2D
     private int MAX_FALL_SPEED = 9000;
     [Export]
     private int MAX_RUN_SPEED = 3000;
+    [Export]
+    private int FULL_HEALTH = 100;
+
+    private Label lblHealth;
 
     private enum State { Idle, Running, Shooting, Falling, Jumping }
     public enum SelectableWeapon { Bazooka, Grenade, Rifle }
-
+    public enum Team { Red = 0, Blue = 1 }
 
     const int GRAVITY = 980;
     const int JUMP_VEL = -150000;
@@ -31,7 +35,9 @@ public class Character : KinematicBody2D
     private Sprite rightArm;
     private Weapon weapon;
     private SelectableWeapon selectedWeapon;
+    private Team currentTeam;
     private int startTime;
+    private int health;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -44,9 +50,13 @@ public class Character : KinematicBody2D
         this.sprites = (Node2D)GetNode("sprites");
         this.groundDetection = (RayCast2D)GetNode("ground_detection");
         this.rightArm = (Sprite)this.sprites.GetNode("arm_right");
+        this.lblHealth = (Label)this.GetNode("LblHealth");
         this.weapon = null;
         this.selectedWeapon = SelectableWeapon.Rifle;
         this.InstantiateWeapon();
+        this.health = FULL_HEALTH;
+
+        lblHealth.SetText(health.ToString());
     }
 
     public override void _PhysicsProcess(float delta)
@@ -253,4 +263,29 @@ public class Character : KinematicBody2D
             this.InstantiateWeapon();
         }
 	}
+
+    public bool IsDead()
+    {
+        return health <= 0;
+    }
+
+    public int Health
+    {
+        get { return this.health; }
+        set { this.health = value; }
+    }
+
+    public void SetTeam(Team team)
+    {
+        this.currentTeam = team;
+
+        if (this.currentTeam == Team.Red)
+        {
+            this.lblHealth.AddColorOverride("font_color", Godot.Colors.Red);
+        }
+        else
+        {
+            this.lblHealth.AddColorOverride("font_color", Godot.Colors.Blue);
+        }
+    }
 }
