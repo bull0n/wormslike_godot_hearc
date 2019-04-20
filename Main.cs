@@ -9,7 +9,7 @@ public class Main : Node
     [Export]
     public int numberOfTeam = 2;
     [Export]
-    private int timePerRound = 30;
+    private int timePerRound = 5;
 
     [Signal]
     public delegate void TimePassedChanged(int timeRemaining);
@@ -66,9 +66,18 @@ public class Main : Node
         this.iCurrentPlayer = 0;
 
         EmitSignal(nameof(ChangeCurrentCharacter), this.teams[0][0]);
+        GD.Print("hello");
     }
 
     private void NextTurn()
+    {
+        this.ChooseNextPlayer();
+
+
+        this.TimeRemaining = this.timePerRound;
+    }
+
+    private void ChooseNextPlayer()
     {
         this.iCurrentPlayer++;
         this.iCurrentTeam++;
@@ -82,7 +91,7 @@ public class Main : Node
             this.iCurrentPlayer = 0;
         }
 
-        this.TimeRemaining = this.timePerRound;
+        EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer]);
     }
 
     private void Start()
@@ -94,9 +103,9 @@ public class Main : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        this.Start();
-        this.SpawnPlayer();
         this.ConnectSignal();
+        this.SpawnPlayer();
+        this.Start();
     }
 
     private void ConnectSignal()
