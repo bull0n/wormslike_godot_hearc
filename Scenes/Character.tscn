@@ -347,7 +347,7 @@ anims/run = SubResource( 4 )
 position = Vector2( 3, -3.776 )
 cast_to = Vector2( 0, 550 )
 
-[node name="Team" type="Label" parent="."]
+[node name="LblHealth" type="Label" parent="."]
 margin_left = -336.0
 margin_top = -449.0
 margin_right = -201.0
@@ -355,19 +355,7 @@ margin_bottom = -432.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_scale = Vector2( 5, 5 )
-text = "HP : 100"
-align = 1
-valign = 1
-
-[node name="Health" type="Label" parent="."]
-margin_left = -336.0
-margin_top = -538.0
-margin_right = -201.0
-margin_bottom = -524.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_scale = Vector2( 5, 5 )
-text = "Team : RED"
+text = "HP"
 align = 1
 valign = 1
 

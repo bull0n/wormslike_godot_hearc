@@ -51,14 +51,16 @@ public class Main : Node
 
         for(int i = 0; i < this.numberOfTeam; i++)
         {
+            Character.Team currentTeam = (Character.Team)i;
             this.teams.Add(new List<Character>());
 
             for(int j = 0; j < this.numberOfPlayerPerTeam; j++)
             {
                 Character newPlayer = (Character)characterScene.Instance();
                 this.teams[i].Add(newPlayer);
-                newPlayer.SetPosition(new Vector2(-290,-90));
+                newPlayer.SetPosition(new Vector2(-290, -90));
                 this.AddChild(newPlayer);
+                newPlayer.SetTeam(currentTeam);
             }
         }
 

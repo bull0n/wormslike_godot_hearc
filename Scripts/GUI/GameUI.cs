@@ -18,15 +18,13 @@ public class GameUI : Control
 
     public void SetCharacter(Character character)
     {
-        GD.Print("new character");
         this.currentCharacter = character;
     }
 
     public override void _Input(InputEvent inputEvent)
     {
         base._Input(inputEvent);
-        //GD.Print("KEY PRESSED : " + inputEvent.ToString());
-        //GD.Print("Character : " + currentCharacter);
+
         if (inputEvent is InputEventKey && this.currentCharacter != null)
         {
             InputEventKey keyEvent = inputEvent as InputEventKey;
