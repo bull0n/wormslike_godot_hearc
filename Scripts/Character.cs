@@ -304,12 +304,6 @@ public class Character : KinematicBody2D
         }
 	}
 
-    public bool IsDead()
-    {
-        return health <= 0;
-    }
-
-
     public void Die()
     {
         EmitSignal(nameof(CharacterDies), this);
@@ -318,7 +312,14 @@ public class Character : KinematicBody2D
     public int Health
     {
         get { return this.health; }
-        set { this.health = value; }
+        set 
+        { 
+            this.health = value; 
+            if(this.health <= 0)
+            {
+                this.Die();
+            }
+        }
     }
 
     public void SetTeam(Team team)
