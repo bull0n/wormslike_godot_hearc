@@ -3,7 +3,6 @@ using System;
 
 public class GameUI : Control
 {
-    private int currentWeaponIndex = 0;
     private Character currentCharacter;
     private Label timerLabel;
 
@@ -12,12 +11,12 @@ public class GameUI : Control
         this.timerLabel = (Label)this.GetNode("Canvas").GetNode("Timer");
     }
 
-    public void updateTime(int timeRemaining)
+    public void UpdateTime(int timeRemaining)
     {
         this.timerLabel.Text = timeRemaining.ToString();
     }
 
-    public void setCharacter(Character character)
+    public void SetCharacter(Character character)
     {
         GD.Print("new character");
         this.currentCharacter = character;
@@ -26,8 +25,9 @@ public class GameUI : Control
     public override void _Input(InputEvent inputEvent)
     {
         base._Input(inputEvent);
-
-        if(inputEvent is InputEventKey && this.currentCharacter != null)
+        GD.Print("KEY PRESSED : " + inputEvent.ToString());
+        GD.Print("Character : " + currentCharacter);
+        if (inputEvent is InputEventKey && this.currentCharacter != null)
         {
             InputEventKey keyEvent = inputEvent as InputEventKey;
 
