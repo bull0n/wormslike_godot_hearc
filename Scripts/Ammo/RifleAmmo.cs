@@ -3,22 +3,26 @@ using System;
 
 public class RifleAmmo : Ammo
 {
-    private static readonly int RADIUS = 5;
-    private static readonly int DAMAGE = 35;
+    private static readonly int DAMAGE = 10;
+
+    private CollisionShape2D collisionObject;
 
     private bool launched = false;
 
-    public RifleAmmo(): this(1, 1)
+    public RifleAmmo(): this(1)
     {
         // Nothing
     }
 
-    public RifleAmmo(int radius, int damage): base(radius, damage)
+    public RifleAmmo(int damage): base(damage)
     {
     }
 
     public override void _Ready()
     {
+        collisionObject = (CollisionShape2D)this.GetNode("CollisionObject");
+
+        Connect("body_entered", this, "OnBodyEnter");
     }
 	
     public override void _PhysicsProcess(float delta)
@@ -40,5 +44,21 @@ public class RifleAmmo : Ammo
         this.ApplyImpulse(Vector2.Zero, direction * strength);
 
         launched = true;
+    }
+
+    private void OnBodyEnter(object body)
+    {
+        if (!collisionObject.Disabled)
+        {
+            object obj = GetCollidingBodies()[0];
+
+            if(obj is Character)
+            {
+                Character character = obj as Character;
+                character.Health -= DAMAGE;
+            }
+
+            this.QueueFree();
+        }
     }
 }

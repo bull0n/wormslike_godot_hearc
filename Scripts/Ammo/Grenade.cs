@@ -3,7 +3,6 @@ using System;
 
 public class Grenade : Ammo
 {
-    private static readonly int RADIUS = 5;
     private static readonly int DAMAGE = 35;
 
     private CollisionShape2D collisionObject;
@@ -11,11 +10,11 @@ public class Grenade : Ammo
 
     private bool launched = false;
 
-    public Grenade(): this(1, 1)
+    public Grenade(): this(1)
     {
     }
 
-    public Grenade(int radius, int damage): base(radius, damage)
+    public Grenade(int damage): base(damage)
     {
     }
 
@@ -42,8 +41,6 @@ public class Grenade : Ammo
     {
         if(!collisionObject.Disabled)
         {
-            GD.Print("Touched");
-
             foreach(Node node in areaExplosion.GetOverlappingBodies())
             {
                 if(node is Character)

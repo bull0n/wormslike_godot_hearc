@@ -3,26 +3,19 @@ using System;
 
 public abstract class Ammo : RigidBody2D
 {
-    private int radius;
     private int damage;
 
-    public Ammo(): this(0, 0)
+    public Ammo(): this(0)
     {
         // Nothing
     }
 
-    public Ammo(int radius, int damage)
+    public Ammo(int damage)
     {
-        this.radius = radius;
         this.damage = damage;
     }
 
     public abstract void Launch(Vector2 direction, int strength);
-
-    public int Radius
-    {
-        get{return radius;}
-    }
 
     public int Damage
     {
