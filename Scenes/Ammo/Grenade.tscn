@@ -7,7 +7,7 @@
 radius = 46.5263
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 202.384
+radius = 518.422
 
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 9.81

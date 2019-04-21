@@ -10,6 +10,8 @@ height = 39.688
 [node name="RifleAmmo" type="RigidBody2D"]
 mass = 0.5
 gravity_scale = 9.81
+contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
 
@@ -17,7 +19,7 @@ script = ExtResource( 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionObject" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
 
