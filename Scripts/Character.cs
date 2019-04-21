@@ -314,7 +314,8 @@ public class Character : KinematicBody2D
         get { return this.health; }
         set 
         { 
-            this.health = value; 
+            this.health = value;
+            this.lblHealth.SetText(this.health.ToString());
             if(this.health <= 0)
             {
                 this.Die();
