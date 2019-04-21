@@ -9,7 +9,7 @@ public class Main : Node
     [Export]
     public int numberOfTeam = 2;
     [Export]
-    private int timePerRound = 5;
+    private int timePerRound = 30;
 
     [Signal]
     public delegate void TimePassedChanged(int timeRemaining);
