@@ -3,7 +3,11 @@ using System;
 
 public class Grenade : Ammo
 {
+    private static readonly String EXPLOSION_FILE_PATH = "res://Scenes/Effects/Explosion.tscn";
+    private static readonly PackedScene EXPLOSION_SCENE = (PackedScene)ResourceLoader.Load(EXPLOSION_FILE_PATH);
+
     private static readonly int DAMAGE = 35;
+	private static readonly int EXPLOSION_SIZE = 5;
 
     private CollisionShape2D collisionObject;
     private Area2D areaExplosion;
@@ -49,6 +53,11 @@ public class Grenade : Ammo
                     character.Health -= DAMAGE;
                 }
             }
+
+            ExplosionEffect explosionEffect = EXPLOSION_SCENE.Instance() as ExplosionEffect;
+            explosionEffect.SetGlobalPosition(this.GlobalPosition);
+            explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
+            this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
 
             this.QueueFree();
         }
