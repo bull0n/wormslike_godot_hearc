@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Timers;
 
 public class Grenade : Ammo
 {
@@ -8,9 +9,11 @@ public class Grenade : Ammo
 
     private static readonly int DAMAGE = 35;
 	private static readonly int EXPLOSION_SIZE = 5;
-
+	private static readonly int TIME = 5000;
+	
     private CollisionShape2D collisionObject;
     private Area2D areaExplosion;
+    private System.Timers.Timer timer;
 
     private bool launched = false;
 
@@ -27,7 +30,10 @@ public class Grenade : Ammo
         collisionObject = (CollisionShape2D)this.GetNode("CollisionObject");
         areaExplosion = (Area2D)this.GetNode("AreaExplosion");
 
-        Connect("body_entered", this, "OnBodyEnter");
+        timer = new System.Timers.Timer(TIME);
+        timer.Elapsed += OnTimeOver;
+        timer.AutoReset = true;
+        timer.Enabled = true;
     }
 
     public override void Launch(Vector2 direction, int strength)
@@ -41,25 +47,25 @@ public class Grenade : Ammo
         launched = true;
     }
 	
-	private void OnBodyEnter(object body)
+    private void OnTimeOver(System.Object source, ElapsedEventArgs e)
     {
-        if(!collisionObject.Disabled)
+        timer.Stop();
+        timer.Dispose();
+
+        foreach (Node node in areaExplosion.GetOverlappingBodies())
         {
-            foreach(Node node in areaExplosion.GetOverlappingBodies())
+            if (node is Character)
             {
-                if(node is Character)
-                {
-                    Character character = node as Character;
-                    character.Health -= DAMAGE;
-                }
+                Character character = node as Character;
+                character.Health -= DAMAGE;
             }
-
-            ExplosionEffect explosionEffect = EXPLOSION_SCENE.Instance() as ExplosionEffect;
-            explosionEffect.SetGlobalPosition(this.GlobalPosition);
-            explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
-            this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
-
-            this.QueueFree();
         }
+
+        ExplosionEffect explosionEffect = EXPLOSION_SCENE.Instance() as ExplosionEffect;
+        explosionEffect.SetGlobalPosition(this.GlobalPosition);
+        explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
+        this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
+
+        this.QueueFree();
     }
 }
