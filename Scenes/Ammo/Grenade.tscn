@@ -10,6 +10,8 @@ radius = 46.5263
 radius = 518.422
 
 [node name="Grenade" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
 gravity_scale = 9.81
 contacts_reported = 1
 contact_monitor = true
@@ -24,6 +26,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="AreaExplosion" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionExplosion" type="CollisionShape2D" parent="AreaExplosion"]
 shape = SubResource( 2 )

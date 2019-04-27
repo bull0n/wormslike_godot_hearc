@@ -18,6 +18,8 @@ scale = Vector2( 50, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
 editor/display_folded = true
+collision_layer = 2
+collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2( 29.3869, 123.203 )

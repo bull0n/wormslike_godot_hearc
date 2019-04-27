@@ -77,6 +77,13 @@ camera_move_mouse={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Terrain"
+2d_physics/layer_3="Grave"
+2d_physics/layer_4="Ammo"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
