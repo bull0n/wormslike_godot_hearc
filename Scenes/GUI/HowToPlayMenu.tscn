@@ -16,16 +16,27 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VSplitContainer"]
+[node name="CenterCommands" type="CenterContainer" parent="Panel/VSplitContainer"]
 margin_right = 1024.0
-margin_bottom = 512.0
+margin_bottom = 429.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VSplitContainer/CenterCommands"]
+margin_left = 137.0
+margin_right = 887.0
+margin_bottom = 429.0
 texture = ExtResource( 2 )
 stretch_mode = 4
 
-[node name="OkButton" type="Button" parent="Panel/VSplitContainer"]
-margin_top = 524.0
+[node name="CenterButton" type="CenterContainer" parent="Panel/VSplitContainer"]
+margin_top = 441.0
 margin_right = 1024.0
 margin_bottom = 600.0
+
+[node name="OkButton" type="Button" parent="Panel/VSplitContainer/CenterButton"]
+margin_left = 462.0
+margin_top = 69.0
+margin_right = 562.0
+margin_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 10 )
