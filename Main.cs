@@ -18,7 +18,7 @@ public class Main : Node
     private readonly string WIN_PATH = "res://Scenes/GUI/Win.tscn";
 
     private bool isRunning;
-    private int iCurrentPlayer;
+    private int[] iCurrentPlayer;
     private int iCurrentTeam;
     
     private List<List<Character>> teams;
@@ -44,6 +44,7 @@ public class Main : Node
         teams = new List<List<Character>>();
         this.timeRemaining = 0;
         this.isRunning = false;
+        this.iCurrentPlayer = new int[numberOfTeam];
     }
 
     public void Init()
@@ -72,14 +73,18 @@ public class Main : Node
         }
 
         this.iCurrentTeam = -1;
-        this.iCurrentPlayer = -1;
+
+        for(int team = 0;team < numberOfTeam; team++)
+        {
+            iCurrentPlayer[team] = -1;
+        }
 
         this.ChooseNextPlayer();
     }
 
     private void NextTurn()
     {
-        this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive = false;
+        this.teams[this.iCurrentTeam][this.iCurrentPlayer[this.iCurrentTeam]].IsActive = false;
         this.ChooseNextPlayer();
 
         this.TimeRemaining = this.timePerRound;
@@ -114,6 +119,9 @@ public class Main : Node
         {
             this.WinTrigger(iTeam);
         }
+
+        if(this.iCurrentPlayer[iCurrentTeam] != 0)
+            this.iCurrentPlayer[iCurrentTeam] -= 1;
     }
 
     private void WinTrigger(int iTeam)
@@ -125,21 +133,23 @@ public class Main : Node
 
     private void ChooseNextPlayer()
     {
-        this.iCurrentPlayer++;
         this.iCurrentTeam++;
 
-        if(this.iCurrentTeam == this.teams.Count)
+        if(this.iCurrentTeam >= this.teams.Count)
         {
             this.iCurrentTeam = 0;
         }
-        if(this.iCurrentPlayer == this.teams[this.iCurrentTeam].Count)
+
+        this.iCurrentPlayer[iCurrentTeam]++;
+
+        if (this.iCurrentPlayer[iCurrentTeam] >= this.teams[this.iCurrentTeam].Count)
         {
-            this.iCurrentPlayer = 0;
+            this.iCurrentPlayer[iCurrentTeam] = 0;
         }
 
-        this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive = true;
-        GD.Print(this.teams[this.iCurrentTeam][this.iCurrentPlayer].IsActive);
-        EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer]);
+        this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]].IsActive = true;
+        GD.Print(this.iCurrentTeam + ":" + iCurrentPlayer);
+        EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]]);
     }
 
     private void Start()
