@@ -3,8 +3,7 @@ using System;
 
 public class Rifle : Weapon
 {
-    private static readonly String WEAPON_NAME = "Rifle";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/RifleAmmo.tscn";
+    private static String WEAPON_NAME = "Rifle";
 
     private static readonly int STRENGTH_FACTOR = 5000;
     private Position2D rifleHolder = null;
@@ -20,9 +19,7 @@ public class Rifle : Weapon
 
     public override void Load()
     {
-        PackedScene rifleAmmoScene = (PackedScene)ResourceLoader.Load(AMMO_SCENE_PATH);
-
-        RifleAmmo rifleAmmo = rifleAmmoScene.Instance() as RifleAmmo;
+        RifleAmmo rifleAmmo = GameResources.GetInstance().Get<RifleAmmo>();
         rifleHolder.AddChild(rifleAmmo);
         this.WeaponAmmo = rifleAmmo;
     }

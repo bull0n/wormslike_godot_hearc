@@ -3,8 +3,7 @@ using System;
 
 public class RocketLauncher : Weapon
 {
-    private static readonly String WEAPON_NAME = "Rocket Launcher";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/Rocket.tscn";
+    private static String WEAPON_NAME = "Rocket Launcher";
 
     private static readonly int STRENGTH_FACTOR = 5;
     private Position2D rocketHolder = null;
@@ -20,9 +19,7 @@ public class RocketLauncher : Weapon
 
     public override void Load()
     {
-        PackedScene rocketScene = (PackedScene)ResourceLoader.Load(AMMO_SCENE_PATH);
-
-        Rocket rocket = rocketScene.Instance() as Rocket;
+        Rocket rocket = GameResources.GetInstance().Get<Rocket>();
         rocketHolder.AddChild(rocket);
         this.WeaponAmmo = rocket;
     }

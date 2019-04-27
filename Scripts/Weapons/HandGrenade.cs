@@ -3,8 +3,7 @@ using System;
 
 public class HandGrenade : Weapon
 {
-    private static readonly String WEAPON_NAME = "Hand Grenade";
-    private static readonly String AMMO_SCENE_PATH = "res://Scenes/Ammo/Grenade.tscn";
+    private static String WEAPON_NAME = "Hand Grenade";
 
     private static readonly int STRENGTH_FACTOR = 2;
     private Position2D grenadeHolder = null;
@@ -20,9 +19,7 @@ public class HandGrenade : Weapon
 
     public override void Load()
     {
-        PackedScene grenadeScene = (PackedScene)ResourceLoader.Load(AMMO_SCENE_PATH);
-
-        Grenade grenade = grenadeScene.Instance() as Grenade;
+        Grenade grenade = GameResources.GetInstance().Get<Grenade>();
         grenadeHolder.AddChild(grenade);
         this.WeaponAmmo = grenade;
     }
