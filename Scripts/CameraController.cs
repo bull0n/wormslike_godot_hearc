@@ -37,30 +37,32 @@ public class CameraController : Camera2D
                 }
             }
         }
+
+        if(inputEvent is InputEventMouseButton)
+        {
+            InputEventMouseButton mouseButtonEvent = inputEvent as InputEventMouseButton;
+
+            if(mouseButtonEvent.IsActionPressed("camera_move_mouse"))
+            {
+                Input.SetMouseMode(Input.MouseMode.Captured);
+            }
+
+            if (mouseButtonEvent.IsActionReleased("camera_move_mouse"))
+            {
+                Input.SetMouseMode(Input.MouseMode.Visible);
+            }
+        }
+
+        if(inputEvent is InputEventMouseMotion & Input.IsActionPressed("camera_move_mouse"))
+        {
+            InputEventMouseMotion mouseMotionEvent = inputEvent as InputEventMouseMotion;
+
+            this.Translate(mouseMotionEvent.Relative);
+        }
     }
 
     public override void _Process(float delta)
     {
         base._Process(delta);
-
-        if (Input.IsActionPressed("camera_left"))
-        {
-            this.Translate(Vector2.Left * SPEED);
-        }
-
-        if (Input.IsActionPressed("camera_right"))
-        {
-            this.Translate(Vector2.Right * SPEED);
-        }
-
-        if (Input.IsActionPressed("camera_up"))
-        {
-            this.Translate(Vector2.Up * SPEED);
-        }
-
-        if (Input.IsActionPressed("camera_down"))
-        {
-            this.Translate(Vector2.Down * SPEED);
-        }
     }
 }
