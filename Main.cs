@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class Main : Node
 {
     [Export]
-    public int numberOfPlayerPerTeam = 1;
+    public int numberOfPlayerPerTeam = 2;
     [Export]
     public int numberOfTeam = 2;
     [Export]
-    private int timePerRound = 30;
+    private int timePerRound = 10;
 
     [Signal]
     public delegate void TimePassedChanged(int timeRemaining);
@@ -21,7 +21,6 @@ public class Main : Node
     private int iCurrentPlayer;
     private int iCurrentTeam;
     
-
     private List<List<Character>> teams;
     private float timeRemaining;
     public float TimeRemaining 
@@ -32,6 +31,12 @@ public class Main : Node
             this.timeRemaining = value;
             EmitSignal(nameof(TimePassedChanged), (int)this.timeRemaining);
         } 
+    }
+
+    static Main()
+    {
+        // Load data
+        GameResources.GetInstance();
     }
 
     public Main()
@@ -87,6 +92,10 @@ public class Main : Node
             team.Remove(character);
             
         }
+
+        Grave grave = GameResources.GetInstance().Get<Grave>();
+        grave.SetGlobalPosition(character.GlobalPosition);
+        this.GetTree().GetRoot().GetNode("Main").AddChild(grave);
 
         character.QueueFree();
 

@@ -33,6 +33,8 @@ class GameResources
         data.Add(nameof(RifleAmmo),         ResourceLoader.Load<PackedScene>("res://Scenes/Ammo/RifleAmmo.tscn"));
 
         data.Add(nameof(ExplosionEffect),   ResourceLoader.Load<PackedScene>("res://Scenes/Effects/Explosion.tscn"));
+
+        data.Add(nameof(Grave),             ResourceLoader.Load<PackedScene>("res://Scenes/Graves/Grave.tscn"));
     }
 
     public NodeType Get<NodeType>() where NodeType : class

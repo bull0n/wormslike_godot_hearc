@@ -60,6 +60,7 @@
     <Compile Include="Scripts\DescructibleTerrain.cs" />
     <Compile Include="Scripts\Effects\ExplosionEffect.cs" />
     <Compile Include="Scripts\GameResources.cs" />
+    <Compile Include="Scripts\Graves\Grave.cs" />
     <Compile Include="Scripts\GUI\GameUI.cs" />
     <Compile Include="Scripts\GUI\HowToPlayMenu.cs" />
     <Compile Include="Scripts\GUI\MainMenu.cs" />
