@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
-[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/CameraController.cs" type="Script" id=3]
-[ext_resource path="res://Scenes/GUI/GameUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/CameraController.cs" type="Script" id=2]
+[ext_resource path="res://Scenes/GUI/GameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60.1522, 54.5403 )
@@ -17,7 +16,6 @@ position = Vector2( 519.674, 556.622 )
 scale = Vector2( 50, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-editor/display_folded = true
 collision_layer = 2
 collision_mask = 13
 
@@ -25,22 +23,27 @@ collision_mask = 13
 position = Vector2( 29.3869, 123.203 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -885.441, -482.149 )
-
 [node name="MainCamera" type="Camera2D" parent="."]
 editor/display_folded = true
 position = Vector2( -643.52, -366.297 )
 anchor_mode = 0
 current = true
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
-[node name="GameUI" parent="MainCamera" instance=ExtResource( 4 )]
+[node name="GameUI" parent="MainCamera" instance=ExtResource( 3 )]
 margin_left = -0.695496
 margin_top = 3.32074
 margin_right = -0.695496
 margin_bottom = 3.32074
 
-[node name="Ground" parent="." instance=ExtResource( 5 )]
-position = Vector2( 147.848, 461.896 )
+[node name="Grounds" type="Node" parent="."]
+
+[node name="Ground" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 2633.89, -738.987 )
+
+[node name="Ground3" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 4396.59, -619.601 )
+
+[node name="Ground2" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 772.868, -788.146 )
 

@@ -7,314 +7,1250 @@
 [node name="Tile" type="Node2D" parent="."]
 
 [node name="DestructibleTerrain" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 96, 352 )
+position = Vector2( -736, 16 )
+
+[node name="DestructibleTerrain209" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 16 )
+
+[node name="DestructibleTerrain105" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -736, -112 )
+
+[node name="DestructibleTerrain397" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, -112 )
 
 [node name="DestructibleTerrain35" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 512, 352 )
+position = Vector2( -320, 16 )
+
+[node name="DestructibleTerrain400" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, 16 )
+
+[node name="DestructibleTerrain192" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -320, -112 )
+
+[node name="DestructibleTerrain244" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, -112 )
 
 [node name="DestructibleTerrain78" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 96, 416 )
+position = Vector2( -736, 80 )
+
+[node name="DestructibleTerrain363" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 80 )
+
+[node name="DestructibleTerrain157" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -736, -48 )
+
+[node name="DestructibleTerrain282" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, -48 )
 
 [node name="DestructibleTerrain103" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 512, 416 )
+position = Vector2( -320, 80 )
+
+[node name="DestructibleTerrain267" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, 80 )
+
+[node name="DestructibleTerrain130" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -320, -48 )
+
+[node name="DestructibleTerrain328" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, -48 )
 
 [node name="DestructibleTerrain16" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 64, 384 )
+position = Vector2( -768, 48 )
+
+[node name="DestructibleTerrain367" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 48 )
+
+[node name="DestructibleTerrain161" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -768, -80 )
+
+[node name="DestructibleTerrain286" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, -80 )
 
 [node name="DestructibleTerrain31" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 480, 384 )
+position = Vector2( -352, 48 )
+
+[node name="DestructibleTerrain408" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, 48 )
+
+[node name="DestructibleTerrain200" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -352, -80 )
+
+[node name="DestructibleTerrain252" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, -80 )
 
 [node name="DestructibleTerrain63" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 64, 448 )
+position = Vector2( -768, 112 )
+
+[node name="DestructibleTerrain309" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 112 )
+
+[node name="DestructibleTerrain136" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -768, -16 )
+
+[node name="DestructibleTerrain334" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, -16 )
 
 [node name="DestructibleTerrain88" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 480, 448 )
+position = Vector2( -352, 112 )
+
+[node name="DestructibleTerrain405" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, 112 )
+
+[node name="DestructibleTerrain197" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -352, -16 )
+
+[node name="DestructibleTerrain249" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, -16 )
 
 [node name="DestructibleTerrain17" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 64, 352 )
+position = Vector2( -768, 16 )
+
+[node name="DestructibleTerrain346" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 16 )
+
+[node name="DestructibleTerrain141" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -768, -112 )
+
+[node name="DestructibleTerrain339" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, -112 )
 
 [node name="DestructibleTerrain27" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 480, 352 )
+position = Vector2( -352, 16 )
+
+[node name="DestructibleTerrain218" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, 16 )
+
+[node name="DestructibleTerrain114" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -352, -112 )
+
+[node name="DestructibleTerrain312" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, -112 )
 
 [node name="DestructibleTerrain65" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 64, 416 )
+position = Vector2( -768, 80 )
+
+[node name="DestructibleTerrain404" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, 80 )
+
+[node name="DestructibleTerrain196" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -768, -48 )
+
+[node name="DestructibleTerrain248" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 64, -48 )
 
 [node name="DestructibleTerrain90" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 480, 416 )
+position = Vector2( -352, 80 )
+
+[node name="DestructibleTerrain301" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, 80 )
+
+[node name="DestructibleTerrain132" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -352, -48 )
+
+[node name="DestructibleTerrain330" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 480, -48 )
 
 [node name="DestructibleTerrain13" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 160, 384 )
+position = Vector2( -672, 48 )
+
+[node name="DestructibleTerrain413" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 48 )
+
+[node name="DestructibleTerrain205" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -672, -80 )
+
+[node name="DestructibleTerrain257" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, -80 )
 
 [node name="DestructibleTerrain28" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 576, 384 )
+position = Vector2( -256, 48 )
+
+[node name="DestructibleTerrain388" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, 48 )
+
+[node name="DestructibleTerrain182" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -256, -80 )
+
+[node name="DestructibleTerrain234" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, -80 )
 
 [node name="DestructibleTerrain64" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 160, 448 )
+position = Vector2( -672, 112 )
+
+[node name="DestructibleTerrain380" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 112 )
+
+[node name="DestructibleTerrain174" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -672, -16 )
+
+[node name="DestructibleTerrain299" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, -16 )
 
 [node name="DestructibleTerrain89" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 576, 448 )
+position = Vector2( -256, 112 )
+
+[node name="DestructibleTerrain351" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, 112 )
+
+[node name="DestructibleTerrain146" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -256, -16 )
+
+[node name="DestructibleTerrain271" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, -16 )
 
 [node name="DestructibleTerrain18" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 448, 384 )
+position = Vector2( -384, 48 )
+
+[node name="DestructibleTerrain345" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, 48 )
+
+[node name="DestructibleTerrain140" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -384, -80 )
+
+[node name="DestructibleTerrain338" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, -80 )
 
 [node name="DestructibleTerrain41" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 864, 384 )
+position = Vector2( 32, 48 )
+
+[node name="DestructibleTerrain368" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, 48 )
+
+[node name="DestructibleTerrain162" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 32, -80 )
+
+[node name="DestructibleTerrain287" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, -80 )
 
 [node name="DestructibleTerrain67" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 448, 448 )
+position = Vector2( -384, 112 )
+
+[node name="DestructibleTerrain373" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, 112 )
+
+[node name="DestructibleTerrain167" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -384, -16 )
+
+[node name="DestructibleTerrain292" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, -16 )
 
 [node name="DestructibleTerrain92" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 864, 448 )
+position = Vector2( 32, 112 )
+
+[node name="DestructibleTerrain386" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, 112 )
+
+[node name="DestructibleTerrain180" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 32, -16 )
+
+[node name="DestructibleTerrain232" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, -16 )
 
 [node name="DestructibleTerrain19" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 416, 384 )
+position = Vector2( -416, 48 )
+
+[node name="DestructibleTerrain350" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, 48 )
+
+[node name="DestructibleTerrain145" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -416, -80 )
+
+[node name="DestructibleTerrain270" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, -80 )
 
 [node name="DestructibleTerrain49" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 832, 384 )
+position = Vector2( 0, 48 )
+
+[node name="DestructibleTerrain416" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, 48 )
+
+[node name="DestructibleTerrain208" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 0, -80 )
+
+[node name="DestructibleTerrain260" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, -80 )
 
 [node name="DestructibleTerrain58" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 416, 448 )
+position = Vector2( -416, 112 )
+
+[node name="DestructibleTerrain222" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, 112 )
+
+[node name="DestructibleTerrain118" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -416, -16 )
+
+[node name="DestructibleTerrain316" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, -16 )
 
 [node name="DestructibleTerrain81" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 832, 448 )
+position = Vector2( 0, 112 )
+
+[node name="DestructibleTerrain395" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, 112 )
+
+[node name="DestructibleTerrain188" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 0, -16 )
+
+[node name="DestructibleTerrain240" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, -16 )
 
 [node name="DestructibleTerrain20" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 384, 384 )
+position = Vector2( -448, 48 )
+
+[node name="DestructibleTerrain342" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, 48 )
+
+[node name="DestructibleTerrain137" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -448, -80 )
+
+[node name="DestructibleTerrain335" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, -80 )
 
 [node name="DestructibleTerrain33" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 800, 384 )
+position = Vector2( -32, 48 )
+
+[node name="DestructibleTerrain358" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, 48 )
+
+[node name="DestructibleTerrain152" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -32, -80 )
+
+[node name="DestructibleTerrain277" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, -80 )
 
 [node name="DestructibleTerrain70" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 384, 448 )
+position = Vector2( -448, 112 )
+
+[node name="DestructibleTerrain268" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, 112 )
+
+[node name="DestructibleTerrain131" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -448, -16 )
+
+[node name="DestructibleTerrain329" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, -16 )
 
 [node name="DestructibleTerrain95" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 800, 448 )
+position = Vector2( -32, 112 )
+
+[node name="DestructibleTerrain389" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, 112 )
+
+[node name="DestructibleTerrain183" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -32, -16 )
+
+[node name="DestructibleTerrain235" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, -16 )
 
 [node name="DestructibleTerrain21" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 352, 384 )
+position = Vector2( -480, 48 )
+
+[node name="DestructibleTerrain411" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, 48 )
+
+[node name="DestructibleTerrain203" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -480, -80 )
+
+[node name="DestructibleTerrain255" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, -80 )
 
 [node name="DestructibleTerrain40" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 768, 384 )
+position = Vector2( -64, 48 )
+
+[node name="DestructibleTerrain263" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, 48 )
+
+[node name="DestructibleTerrain126" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -64, -80 )
+
+[node name="DestructibleTerrain324" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, -80 )
 
 [node name="DestructibleTerrain75" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 352, 448 )
+position = Vector2( -480, 112 )
+
+[node name="DestructibleTerrain224" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, 112 )
+
+[node name="DestructibleTerrain120" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -480, -16 )
+
+[node name="DestructibleTerrain317" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, -16 )
 
 [node name="DestructibleTerrain100" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 768, 448 )
+position = Vector2( -64, 112 )
+
+[node name="DestructibleTerrain361" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, 112 )
+
+[node name="DestructibleTerrain155" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -64, -16 )
+
+[node name="DestructibleTerrain280" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, -16 )
 
 [node name="DestructibleTerrain22" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 320, 384 )
+position = Vector2( -512, 48 )
+
+[node name="DestructibleTerrain393" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, 48 )
+
+[node name="DestructibleTerrain186" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -512, -80 )
+
+[node name="DestructibleTerrain238" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, -80 )
 
 [node name="DestructibleTerrain38" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 736, 384 )
+position = Vector2( -96, 48 )
+
+[node name="DestructibleTerrain384" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, 48 )
+
+[node name="DestructibleTerrain178" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -96, -80 )
+
+[node name="DestructibleTerrain230" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, -80 )
 
 [node name="DestructibleTerrain74" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 320, 448 )
+position = Vector2( -512, 112 )
+
+[node name="DestructibleTerrain375" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, 112 )
+
+[node name="DestructibleTerrain169" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -512, -16 )
+
+[node name="DestructibleTerrain294" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, -16 )
 
 [node name="DestructibleTerrain99" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 736, 448 )
+position = Vector2( -96, 112 )
+
+[node name="DestructibleTerrain379" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, 112 )
+
+[node name="DestructibleTerrain173" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -96, -16 )
+
+[node name="DestructibleTerrain298" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, -16 )
 
 [node name="DestructibleTerrain23" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 288, 384 )
+position = Vector2( -544, 48 )
+
+[node name="DestructibleTerrain217" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, 48 )
+
+[node name="DestructibleTerrain113" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -544, -80 )
+
+[node name="DestructibleTerrain311" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, -80 )
 
 [node name="DestructibleTerrain50" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 704, 384 )
+position = Vector2( -128, 48 )
+
+[node name="DestructibleTerrain212" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, 48 )
+
+[node name="DestructibleTerrain108" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -128, -80 )
+
+[node name="DestructibleTerrain305" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, -80 )
 
 [node name="DestructibleTerrain59" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 288, 448 )
+position = Vector2( -544, 112 )
+
+[node name="DestructibleTerrain406" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, 112 )
+
+[node name="DestructibleTerrain198" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -544, -16 )
+
+[node name="DestructibleTerrain250" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, -16 )
 
 [node name="DestructibleTerrain84" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 704, 448 )
+position = Vector2( -128, 112 )
+
+[node name="DestructibleTerrain366" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, 112 )
+
+[node name="DestructibleTerrain160" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -128, -16 )
+
+[node name="DestructibleTerrain285" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, -16 )
 
 [node name="DestructibleTerrain24" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 256, 384 )
+position = Vector2( -576, 48 )
+
+[node name="DestructibleTerrain403" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, 48 )
+
+[node name="DestructibleTerrain195" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -576, -80 )
+
+[node name="DestructibleTerrain247" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, -80 )
 
 [node name="DestructibleTerrain39" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 672, 384 )
+position = Vector2( -160, 48 )
+
+[node name="DestructibleTerrain365" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, 48 )
+
+[node name="DestructibleTerrain159" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -160, -80 )
+
+[node name="DestructibleTerrain284" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, -80 )
 
 [node name="DestructibleTerrain66" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 256, 448 )
+position = Vector2( -576, 112 )
+
+[node name="DestructibleTerrain374" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, 112 )
+
+[node name="DestructibleTerrain168" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -576, -16 )
+
+[node name="DestructibleTerrain293" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, -16 )
 
 [node name="DestructibleTerrain91" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 672, 448 )
+position = Vector2( -160, 112 )
+
+[node name="DestructibleTerrain355" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, 112 )
+
+[node name="DestructibleTerrain150" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -160, -16 )
+
+[node name="DestructibleTerrain275" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, -16 )
 
 [node name="DestructibleTerrain25" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 224, 384 )
+position = Vector2( -608, 48 )
+
+[node name="DestructibleTerrain265" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, 48 )
+
+[node name="DestructibleTerrain128" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -608, -80 )
+
+[node name="DestructibleTerrain326" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, -80 )
 
 [node name="DestructibleTerrain37" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 640, 384 )
+position = Vector2( -192, 48 )
+
+[node name="DestructibleTerrain264" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, 48 )
+
+[node name="DestructibleTerrain127" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -192, -80 )
+
+[node name="DestructibleTerrain325" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, -80 )
 
 [node name="DestructibleTerrain73" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 224, 448 )
+position = Vector2( -608, 112 )
+
+[node name="DestructibleTerrain303" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, 112 )
+
+[node name="DestructibleTerrain134" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -608, -16 )
+
+[node name="DestructibleTerrain332" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, -16 )
 
 [node name="DestructibleTerrain98" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 640, 448 )
+position = Vector2( -192, 112 )
+
+[node name="DestructibleTerrain387" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, 112 )
+
+[node name="DestructibleTerrain181" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -192, -16 )
+
+[node name="DestructibleTerrain233" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, -16 )
 
 [node name="DestructibleTerrain26" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 192, 384 )
+position = Vector2( -640, 48 )
+
+[node name="DestructibleTerrain215" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, 48 )
+
+[node name="DestructibleTerrain111" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -640, -80 )
+
+[node name="DestructibleTerrain307" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, -80 )
 
 [node name="DestructibleTerrain42" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 608, 384 )
+position = Vector2( -224, 48 )
+
+[node name="DestructibleTerrain362" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, 48 )
+
+[node name="DestructibleTerrain156" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -224, -80 )
+
+[node name="DestructibleTerrain281" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, -80 )
 
 [node name="DestructibleTerrain68" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 192, 448 )
+position = Vector2( -640, 112 )
+
+[node name="DestructibleTerrain220" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, 112 )
+
+[node name="DestructibleTerrain116" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -640, -16 )
+
+[node name="DestructibleTerrain314" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, -16 )
 
 [node name="DestructibleTerrain93" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 608, 448 )
+position = Vector2( -224, 112 )
+
+[node name="DestructibleTerrain226" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, 112 )
+
+[node name="DestructibleTerrain122" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -224, -16 )
+
+[node name="DestructibleTerrain319" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, -16 )
 
 [node name="DestructibleTerrain14" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 128, 384 )
+position = Vector2( -704, 48 )
+
+[node name="DestructibleTerrain378" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 48 )
+
+[node name="DestructibleTerrain172" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -704, -80 )
+
+[node name="DestructibleTerrain297" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, -80 )
 
 [node name="DestructibleTerrain30" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 544, 384 )
+position = Vector2( -288, 48 )
+
+[node name="DestructibleTerrain371" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, 48 )
+
+[node name="DestructibleTerrain165" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -288, -80 )
+
+[node name="DestructibleTerrain290" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, -80 )
 
 [node name="DestructibleTerrain72" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 128, 448 )
+position = Vector2( -704, 112 )
+
+[node name="DestructibleTerrain369" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 112 )
+
+[node name="DestructibleTerrain163" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -704, -16 )
+
+[node name="DestructibleTerrain288" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, -16 )
 
 [node name="DestructibleTerrain97" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 544, 448 )
+position = Vector2( -288, 112 )
+
+[node name="DestructibleTerrain383" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, 112 )
+
+[node name="DestructibleTerrain177" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -288, -16 )
+
+[node name="DestructibleTerrain229" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, -16 )
 
 [node name="DestructibleTerrain15" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 96, 384 )
+position = Vector2( -736, 48 )
+
+[node name="DestructibleTerrain210" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 48 )
+
+[node name="DestructibleTerrain106" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -736, -80 )
+
+[node name="DestructibleTerrain391" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, -80 )
 
 [node name="DestructibleTerrain29" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 512, 384 )
+position = Vector2( -320, 48 )
+
+[node name="DestructibleTerrain385" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, 48 )
+
+[node name="DestructibleTerrain179" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -320, -80 )
+
+[node name="DestructibleTerrain231" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, -80 )
 
 [node name="DestructibleTerrain62" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 96, 448 )
+position = Vector2( -736, 112 )
+
+[node name="DestructibleTerrain402" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, 112 )
+
+[node name="DestructibleTerrain194" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -736, -16 )
+
+[node name="DestructibleTerrain246" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 96, -16 )
 
 [node name="DestructibleTerrain87" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 512, 448 )
+position = Vector2( -320, 112 )
+
+[node name="DestructibleTerrain407" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, 112 )
+
+[node name="DestructibleTerrain199" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -320, -16 )
+
+[node name="DestructibleTerrain251" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 512, -16 )
 
 [node name="DestructibleTerrain2" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 448, 352 )
+position = Vector2( -384, 16 )
+
+[node name="DestructibleTerrain394" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, 16 )
+
+[node name="DestructibleTerrain187" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -384, -112 )
+
+[node name="DestructibleTerrain239" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, -112 )
 
 [node name="DestructibleTerrain43" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 864, 352 )
+position = Vector2( 32, 16 )
+
+[node name="DestructibleTerrain302" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, 16 )
+
+[node name="DestructibleTerrain133" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 32, -112 )
+
+[node name="DestructibleTerrain331" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, -112 )
 
 [node name="DestructibleTerrain69" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 448, 416 )
+position = Vector2( -384, 80 )
+
+[node name="DestructibleTerrain266" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, 80 )
+
+[node name="DestructibleTerrain129" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -384, -48 )
+
+[node name="DestructibleTerrain327" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 448, -48 )
 
 [node name="DestructibleTerrain94" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 864, 416 )
+position = Vector2( 32, 80 )
+
+[node name="DestructibleTerrain219" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, 80 )
+
+[node name="DestructibleTerrain115" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 32, -48 )
+
+[node name="DestructibleTerrain313" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 864, -48 )
 
 [node name="DestructibleTerrain3" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 416, 352 )
+position = Vector2( -416, 16 )
+
+[node name="DestructibleTerrain347" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, 16 )
+
+[node name="DestructibleTerrain142" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -416, -112 )
+
+[node name="DestructibleTerrain340" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, -112 )
 
 [node name="DestructibleTerrain36" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 832, 352 )
+position = Vector2( 0, 16 )
+
+[node name="DestructibleTerrain398" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, 16 )
+
+[node name="DestructibleTerrain190" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 0, -112 )
+
+[node name="DestructibleTerrain242" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, -112 )
 
 [node name="DestructibleTerrain77" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 416, 416 )
+position = Vector2( -416, 80 )
+
+[node name="DestructibleTerrain399" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, 80 )
+
+[node name="DestructibleTerrain191" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -416, -48 )
+
+[node name="DestructibleTerrain243" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 416, -48 )
 
 [node name="DestructibleTerrain102" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 832, 416 )
+position = Vector2( 0, 80 )
+
+[node name="DestructibleTerrain352" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, 80 )
+
+[node name="DestructibleTerrain147" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 0, -48 )
+
+[node name="DestructibleTerrain272" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 832, -48 )
 
 [node name="DestructibleTerrain4" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 384, 352 )
+position = Vector2( -448, 16 )
+
+[node name="DestructibleTerrain348" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, 16 )
+
+[node name="DestructibleTerrain143" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -448, -112 )
+
+[node name="DestructibleTerrain341" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, -112 )
 
 [node name="DestructibleTerrain34" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 800, 352 )
+position = Vector2( -32, 16 )
+
+[node name="DestructibleTerrain359" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, 16 )
+
+[node name="DestructibleTerrain153" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -32, -112 )
+
+[node name="DestructibleTerrain278" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, -112 )
 
 [node name="DestructibleTerrain76" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 384, 416 )
+position = Vector2( -448, 80 )
+
+[node name="DestructibleTerrain414" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, 80 )
+
+[node name="DestructibleTerrain206" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -448, -48 )
+
+[node name="DestructibleTerrain258" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 384, -48 )
 
 [node name="DestructibleTerrain101" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 800, 416 )
+position = Vector2( -32, 80 )
+
+[node name="DestructibleTerrain353" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, 80 )
+
+[node name="DestructibleTerrain148" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -32, -48 )
+
+[node name="DestructibleTerrain273" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 800, -48 )
 
 [node name="DestructibleTerrain5" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 352, 352 )
+position = Vector2( -480, 16 )
+
+[node name="DestructibleTerrain343" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, 16 )
+
+[node name="DestructibleTerrain138" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -480, -112 )
+
+[node name="DestructibleTerrain336" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, -112 )
 
 [node name="DestructibleTerrain32" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 768, 352 )
+position = Vector2( -64, 16 )
+
+[node name="DestructibleTerrain401" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, 16 )
+
+[node name="DestructibleTerrain193" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -64, -112 )
+
+[node name="DestructibleTerrain245" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, -112 )
 
 [node name="DestructibleTerrain71" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 352, 416 )
+position = Vector2( -480, 80 )
+
+[node name="DestructibleTerrain304" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, 80 )
+
+[node name="DestructibleTerrain135" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -480, -48 )
+
+[node name="DestructibleTerrain333" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 352, -48 )
 
 [node name="DestructibleTerrain96" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 768, 416 )
+position = Vector2( -64, 80 )
+
+[node name="DestructibleTerrain344" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, 80 )
+
+[node name="DestructibleTerrain139" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -64, -48 )
+
+[node name="DestructibleTerrain337" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 768, -48 )
 
 [node name="DestructibleTerrain6" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 320, 352 )
+position = Vector2( -512, 16 )
+
+[node name="DestructibleTerrain261" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, 16 )
+
+[node name="DestructibleTerrain124" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -512, -112 )
+
+[node name="DestructibleTerrain322" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, -112 )
 
 [node name="DestructibleTerrain52" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 736, 352 )
+position = Vector2( -96, 16 )
+
+[node name="DestructibleTerrain370" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, 16 )
+
+[node name="DestructibleTerrain164" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -96, -112 )
+
+[node name="DestructibleTerrain289" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, -112 )
 
 [node name="DestructibleTerrain61" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 320, 416 )
+position = Vector2( -512, 80 )
+
+[node name="DestructibleTerrain372" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, 80 )
+
+[node name="DestructibleTerrain166" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -512, -48 )
+
+[node name="DestructibleTerrain291" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 320, -48 )
 
 [node name="DestructibleTerrain86" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 736, 416 )
+position = Vector2( -96, 80 )
+
+[node name="DestructibleTerrain360" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, 80 )
+
+[node name="DestructibleTerrain154" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -96, -48 )
+
+[node name="DestructibleTerrain279" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 736, -48 )
 
 [node name="DestructibleTerrain7" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 288, 352 )
+position = Vector2( -544, 16 )
+
+[node name="DestructibleTerrain392" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, 16 )
+
+[node name="DestructibleTerrain185" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -544, -112 )
+
+[node name="DestructibleTerrain237" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, -112 )
 
 [node name="DestructibleTerrain46" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 704, 352 )
+position = Vector2( -128, 16 )
+
+[node name="DestructibleTerrain211" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, 16 )
+
+[node name="DestructibleTerrain107" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -128, -112 )
+
+[node name="DestructibleTerrain356" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, -112 )
 
 [node name="DestructibleTerrain55" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 288, 416 )
+position = Vector2( -544, 80 )
+
+[node name="DestructibleTerrain364" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, 80 )
+
+[node name="DestructibleTerrain158" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -544, -48 )
+
+[node name="DestructibleTerrain283" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 288, -48 )
 
 [node name="DestructibleTerrain82" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 704, 416 )
+position = Vector2( -128, 80 )
+
+[node name="DestructibleTerrain354" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, 80 )
+
+[node name="DestructibleTerrain149" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -128, -48 )
+
+[node name="DestructibleTerrain274" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 704, -48 )
 
 [node name="DestructibleTerrain8" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 256, 352 )
+position = Vector2( -576, 16 )
+
+[node name="DestructibleTerrain227" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, 16 )
+
+[node name="DestructibleTerrain123" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -576, -112 )
+
+[node name="DestructibleTerrain321" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, -112 )
 
 [node name="DestructibleTerrain45" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 672, 352 )
+position = Vector2( -160, 16 )
+
+[node name="DestructibleTerrain357" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, 16 )
+
+[node name="DestructibleTerrain151" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -160, -112 )
+
+[node name="DestructibleTerrain276" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, -112 )
 
 [node name="DestructibleTerrain54" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 256, 416 )
+position = Vector2( -576, 80 )
+
+[node name="DestructibleTerrain223" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, 80 )
+
+[node name="DestructibleTerrain119" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -576, -48 )
+
+[node name="DestructibleTerrain318" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 256, -48 )
 
 [node name="DestructibleTerrain80" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 672, 416 )
+position = Vector2( -160, 80 )
+
+[node name="DestructibleTerrain410" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, 80 )
+
+[node name="DestructibleTerrain202" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -160, -48 )
+
+[node name="DestructibleTerrain254" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 672, -48 )
 
 [node name="DestructibleTerrain9" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 224, 352 )
+position = Vector2( -608, 16 )
+
+[node name="DestructibleTerrain216" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, 16 )
+
+[node name="DestructibleTerrain112" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -608, -112 )
+
+[node name="DestructibleTerrain310" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, -112 )
 
 [node name="DestructibleTerrain48" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 640, 352 )
+position = Vector2( -192, 16 )
+
+[node name="DestructibleTerrain262" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, 16 )
+
+[node name="DestructibleTerrain125" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -192, -112 )
+
+[node name="DestructibleTerrain323" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, -112 )
 
 [node name="DestructibleTerrain57" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 224, 416 )
+position = Vector2( -608, 80 )
+
+[node name="DestructibleTerrain214" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, 80 )
+
+[node name="DestructibleTerrain110" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -608, -48 )
+
+[node name="DestructibleTerrain308" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 224, -48 )
 
 [node name="DestructibleTerrain104" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 640, 416 )
+position = Vector2( -192, 80 )
+
+[node name="DestructibleTerrain225" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, 80 )
+
+[node name="DestructibleTerrain121" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -192, -48 )
+
+[node name="DestructibleTerrain320" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 640, -48 )
 
 [node name="DestructibleTerrain10" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 192, 352 )
+position = Vector2( -640, 16 )
+
+[node name="DestructibleTerrain396" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, 16 )
+
+[node name="DestructibleTerrain189" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -640, -112 )
+
+[node name="DestructibleTerrain241" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, -112 )
 
 [node name="DestructibleTerrain51" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 608, 352 )
+position = Vector2( -224, 16 )
+
+[node name="DestructibleTerrain377" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, 16 )
+
+[node name="DestructibleTerrain171" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -224, -112 )
+
+[node name="DestructibleTerrain296" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, -112 )
 
 [node name="DestructibleTerrain60" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 192, 416 )
+position = Vector2( -640, 80 )
+
+[node name="DestructibleTerrain390" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, 80 )
+
+[node name="DestructibleTerrain184" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -640, -48 )
+
+[node name="DestructibleTerrain236" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 192, -48 )
 
 [node name="DestructibleTerrain85" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 608, 416 )
+position = Vector2( -224, 80 )
+
+[node name="DestructibleTerrain213" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, 80 )
+
+[node name="DestructibleTerrain109" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -224, -48 )
+
+[node name="DestructibleTerrain306" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 608, -48 )
 
 [node name="DestructibleTerrain11" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 160, 352 )
+position = Vector2( -672, 16 )
+
+[node name="DestructibleTerrain381" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 16 )
+
+[node name="DestructibleTerrain175" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -672, -112 )
+
+[node name="DestructibleTerrain300" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, -112 )
 
 [node name="DestructibleTerrain47" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 576, 352 )
+position = Vector2( -256, 16 )
+
+[node name="DestructibleTerrain382" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, 16 )
+
+[node name="DestructibleTerrain176" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -256, -112 )
+
+[node name="DestructibleTerrain228" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, -112 )
 
 [node name="DestructibleTerrain56" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 160, 416 )
+position = Vector2( -672, 80 )
+
+[node name="DestructibleTerrain349" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, 80 )
+
+[node name="DestructibleTerrain144" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -672, -48 )
+
+[node name="DestructibleTerrain269" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 160, -48 )
 
 [node name="DestructibleTerrain79" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 576, 416 )
+position = Vector2( -256, 80 )
+
+[node name="DestructibleTerrain221" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, 80 )
+
+[node name="DestructibleTerrain117" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -256, -48 )
+
+[node name="DestructibleTerrain315" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 576, -48 )
 
 [node name="DestructibleTerrain12" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 128, 352 )
+position = Vector2( -704, 16 )
+
+[node name="DestructibleTerrain376" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 16 )
+
+[node name="DestructibleTerrain170" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -704, -112 )
+
+[node name="DestructibleTerrain295" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, -112 )
 
 [node name="DestructibleTerrain44" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 544, 352 )
+position = Vector2( -288, 16 )
+
+[node name="DestructibleTerrain415" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, 16 )
+
+[node name="DestructibleTerrain207" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -288, -112 )
+
+[node name="DestructibleTerrain259" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, -112 )
 
 [node name="DestructibleTerrain53" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 128, 416 )
+position = Vector2( -704, 80 )
+
+[node name="DestructibleTerrain412" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, 80 )
+
+[node name="DestructibleTerrain204" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -704, -48 )
+
+[node name="DestructibleTerrain256" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 128, -48 )
 
 [node name="DestructibleTerrain83" parent="Tile" instance=ExtResource( 1 )]
-position = Vector2( 544, 416 )
+position = Vector2( -288, 80 )
+
+[node name="DestructibleTerrain409" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, 80 )
+
+[node name="DestructibleTerrain201" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( -288, -48 )
+
+[node name="DestructibleTerrain253" parent="Tile" instance=ExtResource( 1 )]
+position = Vector2( 544, -48 )
 

@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public class DescructibleTerrain : Area2D
+public class DescructibleTerrain : RigidBody2D
 {
 
     [Export]
-    private int MIN_SIZE = 8;
+    private int MIN_SIZE = 16;
     private int size;
 
     DescructibleTerrain() 
@@ -15,16 +15,19 @@ public class DescructibleTerrain : Area2D
 
     public override void _Ready()
     {
-        Connect("body_entered", this, "_on_Node2D_body_entered");
+        //Connect("body_entered", this, "_on_Node2D_body_entered");
     }
 
-    public void _on_Node2D_body_entered(PhysicsBody2D area)
-    {
-        if(area.GetType() != typeof(Area2D))
-        {
-            this.Split();
-        }
-    }
+    // public void _on_Node2D_body_entered(Node area)
+    // {
+    //     //if(area.GetType() != typeof(Area2D))
+    //     //{
+    //     //Get
+    //     GD.Print("Hello");
+    //     this.Split();
+    //     GetCollidingBodies();
+    //     //}
+    // }
 
     public void Split()
     {

@@ -19,6 +19,7 @@ public class Rocket : Ammo
     {
         collisionObject = (CollisionShape2D)this.GetNode("CollisionObject");
         areaExplosion = (Area2D)this.GetNode("AreaExplosion");
+        areaExplosion.Connect("body_entered", this, "CollidTerrain");
 
         Connect("body_entered", this, "OnBodyEnter");
     }
@@ -43,6 +44,16 @@ public class Rocket : Ammo
         this.ApplyTorqueImpulse((direction * strength + Vector2.Down * GravityScale * Mass).Angle());
 
         launched = true;
+    }
+
+    public void CollidTerrain(PhysicsBody2D body)
+    {
+        DescructibleTerrain terrain = body as DescructibleTerrain;
+
+        if(terrain != null)
+        {
+            terrain.Split();
+        }
     }
 
     private void OnBodyEnter(object body)
