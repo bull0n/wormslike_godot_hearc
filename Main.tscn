@@ -1,27 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://Scripts/CameraController.cs" type="Script" id=2]
 [ext_resource path="res://Scenes/GUI/GameUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 60.1522, 54.5403 )
-
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 519.674, 556.622 )
-scale = Vector2( 50, 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2( 29.3869, 123.203 )
-shape = SubResource( 1 )
 
 [node name="MainCamera" type="Camera2D" parent="."]
 editor/display_folded = true
@@ -39,11 +24,32 @@ margin_bottom = 3.32074
 [node name="Grounds" type="Node" parent="."]
 
 [node name="Ground" parent="Grounds" instance=ExtResource( 4 )]
-position = Vector2( 2633.89, -738.987 )
+position = Vector2( -1664, 832 )
+
+[node name="Ground8" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( -1664, 1088 )
 
 [node name="Ground3" parent="Grounds" instance=ExtResource( 4 )]
-position = Vector2( 4396.59, -619.601 )
+position = Vector2( 1664, 832 )
+
+[node name="Ground7" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 1664, 1088 )
 
 [node name="Ground2" parent="Grounds" instance=ExtResource( 4 )]
-position = Vector2( 772.868, -788.146 )
+position = Vector2( 0, 832 )
+
+[node name="Ground9" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 0, 1088 )
+
+[node name="Ground4" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( -3328, 832 )
+
+[node name="Ground10" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( -3328, 1088 )
+
+[node name="Ground5" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 3328, 832 )
+
+[node name="Ground12" parent="Grounds" instance=ExtResource( 4 )]
+position = Vector2( 3328, 1088 )
 

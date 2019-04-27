@@ -66,7 +66,7 @@ public class Main : Node
                 Character newPlayer = (Character)characterScene.Instance();
                 newPlayer.Connect("CharacterDies", this, "removeCharacter");
                 this.teams[i].Add(newPlayer);
-                newPlayer.SetPosition(new Vector2(1500 + i * 300, -100));
+                newPlayer.SetPosition(new Vector2(-1300 + i * -1500 + j * 3000, -500));
                 this.AddChild(newPlayer);
                 newPlayer.SetTeam(currentTeam);
             }
