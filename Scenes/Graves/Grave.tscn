@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Graves/Grave.cs" type="Script" id=1]
+[ext_resource path="res://Resources/Graves/Graves1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42.3172, 70.6831 )
+
+[node name="Grave" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GraveSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="GraveSprite"]
+gravity_scale = 9.81
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GraveSprite/RigidBody2D"]
+shape = SubResource( 1 )
+
