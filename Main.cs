@@ -92,6 +92,10 @@ public class Main : Node
 
     private void removeCharacter(Character character)
     {
+        if(this.teams[this.iCurrentTeam][this.iCurrentPlayer[this.iCurrentTeam]] == character)
+        {
+            timeRemaining = 1;
+        }
         foreach(List<Character> team in this.teams)
         {
             team.Remove(character);
