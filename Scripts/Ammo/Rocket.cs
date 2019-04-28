@@ -1,3 +1,12 @@
+/* 
+ * *********************************************************************************************************
+ * Project: BArc
+ * Author: Lucas Bulloni & Malik Fleury
+ * Date: 27.04.2019
+ * Description: Represents a rocket
+ * *********************************************************************************************************
+ */
+
 using System;
 using Godot;
 
@@ -11,10 +20,16 @@ public class Rocket : Ammo
 
     private bool launched = false;
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public Rocket() : base(DAMAGE)
     {
     }
 
+    /// <summary>
+    /// Initialise the node when the game engine is ready
+    /// </summary>
     public override void _Ready()
     {
         collisionObject = (CollisionShape2D)this.GetNode("CollisionObject");
@@ -24,6 +39,10 @@ public class Rocket : Ammo
         //areaExplosion.Connect("body_entered", this, "CollidTerrain");
     }
 
+    /// <summary>
+    /// Execute physic stuff (change orientation of the rocket)
+    /// </summary>
+    /// <param name="delta">Time elapsed between this call and the last one</param>
     public override void _PhysicsProcess(float delta)
     {
         base._PhysicsProcess(delta);
@@ -35,6 +54,10 @@ public class Rocket : Ammo
         }
     }
 
+    /// <summary>
+    /// Check collision and split terrain if necessary
+    /// </summary>
+    /// <param name="body"></param>
     public void CollidTerrain(PhysicsBody2D body)
     {
         DescructibleTerrain terrain = body as DescructibleTerrain;
@@ -43,8 +66,13 @@ public class Rocket : Ammo
         {
             terrain.Split();
         }
-}
+    }
 
+    /// <summary>
+    /// Launch the rocket in the given direction and with the given strength
+    /// </summary>
+    /// <param name="direction">Direction of the shoot</param>
+    /// <param name="strength">Strength of the shoot</param>
     public override void Launch(Vector2 direction, int strength)
     {
         direction = direction.Normalized();
@@ -56,10 +84,15 @@ public class Rocket : Ammo
         launched = true;
     }
 
+    /// <summary>
+    /// Detect collisions when rocket explode and apply damage to characters near the explosion
+    /// </summary>
+    /// <param name="body">Object which detect collision</param>
     private void OnBodyEnter(object body)
     {
         if (!collisionObject.Disabled)
         {
+            // Look for characters and remove some health
             foreach (Node node in areaExplosion.GetOverlappingBodies())
             {
                 if (node is Character)
@@ -69,6 +102,7 @@ public class Rocket : Ammo
                 }
             }
 
+            // Launch the explosion animation
             ExplosionEffect explosionEffect = GameResources.GetInstance().Get<ExplosionEffect>();
             explosionEffect.SetGlobalPosition(this.GlobalPosition);
             explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);

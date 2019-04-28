@@ -1,3 +1,12 @@
+/* 
+ * *********************************************************************************************************
+ * Project: BArc
+ * Author: Lucas Bulloni & Malik Fleury
+ * Date: 27.04.2019
+ * Description: Represents a rifle
+ * *********************************************************************************************************
+ */
+
 using Godot;
 using System;
 
@@ -8,6 +17,9 @@ public class ExplosionEffect : Sprite
     private static readonly String ANIMATION_FINISHED_SIGNAL = "animation_finished";
     private Area2D explosionArea;
 	
+    /// <summary>
+    /// Initialise the node when the game engine is ready
+    /// </summary>
     public override void _Ready()
     {
         AnimationPlayer animationPlayer = this.GetNode(ANIM_PLAYER_NODE_NAME) as AnimationPlayer;
@@ -18,6 +30,10 @@ public class ExplosionEffect : Sprite
         //explosionArea.Connect("body_entered", this, "CollidTerrain");
     }
 
+    /// <summary>
+    /// Check collision with terrain and split it if necessary
+    /// </summary>
+    /// <param name="body"></param>
     public void CollidTerrain(PhysicsBody2D body)
     {
         DescructibleTerrain terrain = body as DescructibleTerrain;
@@ -28,6 +44,10 @@ public class ExplosionEffect : Sprite
         }
     }
 
+    /// <summary>
+    /// Split terrains
+    /// </summary>
+    /// <param name="terrains">Array of terrains to execute the splitting</param>
     public void SplitTerrain(DescructibleTerrain[] terrains)
     {
         for(int i = 0; terrains != null && i < terrains.Length; i++)
@@ -40,6 +60,10 @@ public class ExplosionEffect : Sprite
         }
     }
 
+    /// <summary>
+    /// Execute physic stuff (collision with terrain)
+    /// </summary>
+    /// <param name="delta">Time elapsed between the last call of this method</param>
     public override void _PhysicsProcess(float delta)
     {
         var collidingBody = this.explosionArea.GetOverlappingBodies();
@@ -50,6 +74,10 @@ public class ExplosionEffect : Sprite
         }
     }
 
+    /// <summary>
+    /// Delete the explosion when his animation is terminated
+    /// </summary>
+    /// <param name="animationName">Name of the animation</param>
     public void OnAnimationFinished(String animationName)
     {
         this.QueueFree();
