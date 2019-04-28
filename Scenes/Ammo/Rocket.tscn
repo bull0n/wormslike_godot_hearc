@@ -39,5 +39,4 @@ collision_mask = 3
 
 [node name="CollisionExplosion" type="CollisionShape2D" parent="AreaExplosion"]
 shape = SubResource( 3 )
-disabled = true
 
