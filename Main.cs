@@ -92,6 +92,10 @@ public class Main : Node
 
     private void removeCharacter(Character character)
     {
+        if(this.teams[this.iCurrentTeam][this.iCurrentPlayer[this.iCurrentTeam]] == character)
+        {
+            timeRemaining = 1;
+        }
         foreach(List<Character> team in this.teams)
         {
             team.Remove(character);
@@ -148,7 +152,6 @@ public class Main : Node
         }
 
         this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]].IsActive = true;
-        GD.Print(this.iCurrentTeam + ":" + iCurrentPlayer);
         EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]]);
     }
 

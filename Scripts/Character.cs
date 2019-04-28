@@ -161,23 +161,24 @@ public class Character : KinematicBody2D
         {   
             this.state = State.Running;
 
-            if(this.IsActive)
-            {
-                if(Input.IsActionPressed("ui_right"))
-                {        
-                    acceleration.x = ACCEL;
-                }
-                else if(Input.IsActionPressed("ui_left"))
-                {
-                    acceleration.x = -ACCEL;
-                }
-                else 
-                {
-                    acceleration.x = 0;
-                    this.state = State.Idle;
-                }
+            if(Input.IsActionPressed("ui_right") && isActive)
+            {        
+                acceleration.x = ACCEL;
             }
-
+            else if(Input.IsActionPressed("ui_left") && isActive)
+            {
+                acceleration.x = -ACCEL;
+            }
+            else 
+            {
+                acceleration.x = 0;
+                this.state = State.Idle;
+            }
+        }
+        else 
+        {
+            acceleration.x = 0;
+            this.state = State.Idle;
         }
     }
 
@@ -240,8 +241,6 @@ public class Character : KinematicBody2D
 
     private void InstantiateWeapon() 
     {       
-        PackedScene weapon = null;
-
         if (rightArm.GetChildCount() > 1)
         {
             rightArm.RemoveChild(this.weapon);
