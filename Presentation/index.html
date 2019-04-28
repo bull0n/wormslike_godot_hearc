@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -69,7 +69,7 @@
 							<li>Godot 3.1</li>
 							<li>Open source</li>
 							<li>2D et 3D</li>
-							<li>GDScript ou C#</li>
+							<li>GDScript, C# ou C++</li>
 							<li>Système de scènes ("Prefabs")</li>
 						</ul>
 						<center class="col">
@@ -106,17 +106,23 @@
 					</div>
 				</section>
 				<section>
-					<h2>Amélioration</h2>
+					<h2>Améliorations</h2>
 					<ul>
 						<li>Appliquer des forces sur les personnages</li>
-						<li>Régler les ralentissements dûs au terrain</li>
+						<li>
+							Régler les ralentissements dûs au terrain
+							<ul>
+								<li>Changer de système</li>
+								<li>Addition / Soustraction d'image ?</li>
+							</ul>
+						</li>
 						<li>Créer de grandes maps</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Conclusion</h2>
 					<ul>
-						<li>Excellent moteur</li>
+						<li>Excellent moteur, plus adapté pour la 2D que Unity</li>
 						<li>Fonctionnalités prévues existantes</li>
 						<li>Problèmes de ralentissement</li>
 						<li>Créer de grandes maps</li>
@@ -140,6 +146,8 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
+				slideNumber: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
