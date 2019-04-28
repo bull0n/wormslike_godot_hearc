@@ -19,9 +19,9 @@ public class Rocket : Ammo
     {
         collisionObject = (CollisionShape2D)this.GetNode("CollisionObject");
         areaExplosion = (Area2D)this.GetNode("AreaExplosion");
-        areaExplosion.Connect("body_entered", this, "CollidTerrain");
 
         Connect("body_entered", this, "OnBodyEnter");
+        //areaExplosion.Connect("body_entered", this, "CollidTerrain");
     }
 
     public override void _PhysicsProcess(float delta)
@@ -35,6 +35,16 @@ public class Rocket : Ammo
         }
     }
 
+    public void CollidTerrain(PhysicsBody2D body)
+    {
+        DescructibleTerrain terrain = body as DescructibleTerrain;
+
+        if(terrain != null)
+        {
+            terrain.Split();
+        }
+}
+
     public override void Launch(Vector2 direction, int strength)
     {
         direction = direction.Normalized();
@@ -44,16 +54,6 @@ public class Rocket : Ammo
         this.ApplyTorqueImpulse((direction * strength + Vector2.Down * GravityScale * Mass).Angle());
 
         launched = true;
-    }
-
-    public void CollidTerrain(PhysicsBody2D body)
-    {
-        DescructibleTerrain terrain = body as DescructibleTerrain;
-
-        if(terrain != null)
-        {
-            terrain.Split();
-        }
     }
 
     private void OnBodyEnter(object body)
@@ -72,7 +72,8 @@ public class Rocket : Ammo
             ExplosionEffect explosionEffect = GameResources.GetInstance().Get<ExplosionEffect>();
             explosionEffect.SetGlobalPosition(this.GlobalPosition);
             explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
-            this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
+            this.GetTree().GetRoot().GetNode("Main").CallDeferred("add_child", explosionEffect);
+            //this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
 
             this.QueueFree();
         }

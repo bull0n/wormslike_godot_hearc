@@ -29,16 +29,19 @@ public class DescructibleTerrain : RigidBody2D
     //     //}
     // }
 
-    public void Split()
+    public DescructibleTerrain[] Split()
     {
         if(size <= this.MIN_SIZE)
         {
             this.QueueFree();
-		    return;
+		    return null;
         }
 
         this.size /= 2;
 
+        DescructibleTerrain[] newNodes = new DescructibleTerrain[4];
+
+        int iNewNode = 0;
         for(int i = -1; i <= 1; i += 2)
         {
             for(int j = -1; j <= 1; j += 2)
@@ -49,16 +52,21 @@ public class DescructibleTerrain : RigidBody2D
                 
                 Vector2 relativePosition = new Vector2(position * i, position * j);
                 newNode.SetPosition(GetPosition() + relativePosition);
+                newNodes[iNewNode] = newNode;
+                iNewNode++;
             }
         }
-        
+
         this.QueueFree();
+
+        return newNodes;
     }
 
     public DescructibleTerrain MakeNewNode()
     {
         DescructibleTerrain newNode = Duplicate() as DescructibleTerrain;
-        GetParent().CallDeferred("add_child", newNode);
+        //GetParent().CallDeferred("add_child", newNode);
+        GetParent().AddChild(newNode);
         newNode.SetScale(GetScale()/2.0f);
 
         return newNode;

@@ -14,7 +14,6 @@ collision_layer = 8
 collision_mask = 3
 gravity_scale = 9.81
 contacts_reported = 1
-contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
 
@@ -31,4 +30,5 @@ collision_mask = 3
 
 [node name="CollisionExplosion" type="CollisionShape2D" parent="AreaExplosion"]
 shape = SubResource( 2 )
+disabled = true
 
