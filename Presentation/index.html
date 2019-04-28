@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<style>
+		.container{
+		    display: flex;
+		}
+		.col{
+		    flex: 1;
+		}
+		</style>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>BArc</h1>
+					<h6>Lucas Bulloni & Malik Fleury</h6>
+				</section>
+				<section>
+					<h2>Sommaire</h2>
+					<ul>
+						<li>Fonctionnalités</li>
+						<li>Démonstration</li>
+						<li>Moteur de jeu</li>
+						<li>Sprites</li>
+						<li>Problèmes rencontrés</li>
+						<li>Améliorations</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fonctionnalités</h2>
+					<ul>
+						<li>Deux joueurs</li>
+						<li>Choix entre 3 armes</li>
+						<li>Gestion des tours</li>
+						<li>Gestion des dégâts</li>
+						<li>Gestion de la mort (tombes)</li>
+						<li>Terrain destructible</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Démonstration</h1>
+				</section>
+				<section>
+					<h2>Moteur de jeu</h2>
+					<div class="container">
+						<ul class="col">
+							<li>Godot 3.1</li>
+							<li>Open source</li>
+							<li>2D et 3D</li>
+							<li>GDScript ou C#</li>
+							<li>Système de scènes ("Prefabs")</li>
+						</ul>
+						<center class="col">
+							<br>
+							<img src="./img/Godot_icon.svg" alt="Godot" height="128" width="128">
+						</center>
+					</div>
+				</section>
+				<section>
+					<h2>Sprites</h2>
+					<div class="container">
+							<ul class="col">
+								<li>OpenGameArt</li>
+								<li>Kenney (Armes et tombes)</li>
+								<li>Blender (génération de sprites)</li>
+							</ul>
+							<center class="col">
+								<br>
+								<img src="./img/shotgun.png" alt="Rifle" height="128" width="128">
+							</center>
+					</div>
+				</section>
+				<section>
+					<h2>Problèmes rencontrés</h2>
+					<div class="container">
+						<ul class="col">
+							<li>Terrain destructible</li>
+							<li>Ralentissement lors du chargement de scènes à la volée</li>
+						</ul>
+						<center class="col">
+							<br>
+							<img src="./img/grave_cross.png" alt="Grave" width="128">
+						</center>
+					</div>
+				</section>
+				<section>
+					<h2>Amélioration</h2>
+					<ul>
+						<li>Appliquer des forces sur les personnages</li>
+						<li>Régler les ralentissements dûs au terrain</li>
+						<li>Créer de grandes maps</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Conclusion</h2>
+					<ul>
+						<li>Excellent moteur</li>
+						<li>Fonctionnalités prévues existantes</li>
+						<li>Problèmes de ralentissement</li>
+						<li>Créer de grandes maps</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Source</h2>
+					<ul>
+						<li>Logo Godot: <a href="https://www.google.ch/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiDx471qPLhAhWQyqQKHcfyCIIQjhx6BAgBEAM&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGodot_icon.svg&psig=AOvVaw0bhsQrCaLAz-dss6IXTCUs&ust=1556524809552759">Wikimedia</a></li>
+						<li>Armes: <a href="https://www.kenney.nl/assets/weapon-pack">Kenney Official WebSite</a></li>
+						<li>Tombes: <a href="https://www.kenney.nl/assets/graveyard-kit">Kenney Official WebSite</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
