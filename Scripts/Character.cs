@@ -241,8 +241,6 @@ public class Character : KinematicBody2D
 
     private void InstantiateWeapon() 
     {       
-        PackedScene weapon = null;
-
         if (rightArm.GetChildCount() > 1)
         {
             rightArm.RemoveChild(this.weapon);

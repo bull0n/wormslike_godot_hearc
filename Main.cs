@@ -152,7 +152,6 @@ public class Main : Node
         }
 
         this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]].IsActive = true;
-        GD.Print(this.iCurrentTeam + ":" + iCurrentPlayer);
         EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]]);
     }
 
