@@ -15,6 +15,9 @@ class GameResources
 {
     private Dictionary<String, PackedScene> data;
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     private GameResources()
     {
         data = new Dictionary<String, PackedScene>();
@@ -22,6 +25,9 @@ class GameResources
         this.Fill();
     }
 
+    /// <summary>
+    /// Add resources to preload
+    /// </summary>
     private void Fill()
     {
         data.Add(nameof(HandGrenade),       ResourceLoader.Load<PackedScene>("res://Scenes/Weapons/HandGrenade.tscn"));
@@ -37,6 +43,11 @@ class GameResources
         data.Add(nameof(Grave),             ResourceLoader.Load<PackedScene>("res://Scenes/Graves/Grave.tscn"));
     }
 
+    /// <summary>
+    /// Get a node from a preloaded scene
+    /// </summary>
+    /// <typeparam name="NodeType">Type of the wanted node</typeparam>
+    /// <returns>The wanted node</returns>
     public NodeType Get<NodeType>() where NodeType : class
     {
         String key = typeof(NodeType).Name;
@@ -58,6 +69,10 @@ class GameResources
 
     private static GameResources instance = null;
 
+    /// <summary>
+    /// Get the unique instance of this class
+    /// </summary>
+    /// <returns>Unique instance of GameResources</returns>
     public static GameResources GetInstance()
     {
         if(instance == null)

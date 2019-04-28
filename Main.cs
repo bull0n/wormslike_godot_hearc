@@ -1,5 +1,13 @@
+/* 
+ * *********************************************************************************************************
+ * Project: BArc
+ * Author: Lucas Bulloni & Malik Fleury
+ * Date: 27.04.2019
+ * Description: Main logic of the game
+ * *********************************************************************************************************
+ */
+
 using Godot;
-using System;
 using System.Collections.Generic;
 
 public class Main : Node
@@ -33,12 +41,18 @@ public class Main : Node
         } 
     }
 
+    /// <summary>
+    /// Force preload
+    /// </summary>
     static Main()
     {
         // Load data
         GameResources.GetInstance();
     }
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public Main()
     {
         teams = new List<List<Character>>();
@@ -52,6 +66,9 @@ public class Main : Node
         this.SpawnPlayer();
     }
 
+    /// <summary>
+    /// Spawn the characters
+    /// </summary>
     private void SpawnPlayer()
     {
         var characterScene = GD.Load<PackedScene>("res://Scenes/Character.tscn"); 
@@ -82,6 +99,9 @@ public class Main : Node
         this.ChooseNextPlayer();
     }
 
+    /// <summary>
+    /// Execute stuff for the next turn
+    /// </summary>
     private void NextTurn()
     {
         this.teams[this.iCurrentTeam][this.iCurrentPlayer[this.iCurrentTeam]].IsActive = false;
@@ -90,6 +110,10 @@ public class Main : Node
         this.TimeRemaining = this.timePerRound;
     }
 
+    /// <summary>
+    /// Remove a character from the game
+    /// </summary>
+    /// <param name="character">Character to remove</param>
     private void removeCharacter(Character character)
     {
         if(this.teams[this.iCurrentTeam][this.iCurrentPlayer[this.iCurrentTeam]] == character)
@@ -102,6 +126,7 @@ public class Main : Node
             
         }
 
+        // Create the grave :'(
         Grave grave = GameResources.GetInstance().Get<Grave>();
         grave.SetGlobalPosition(character.GlobalPosition);
         this.GetTree().GetRoot().GetNode("Main").AddChild(grave);
@@ -128,6 +153,10 @@ public class Main : Node
             this.iCurrentPlayer[iCurrentTeam] -= 1;
     }
 
+    /// <summary>
+    /// Print the "Win Screen"
+    /// </summary>
+    /// <param name="iTeam"></param>
     private void WinTrigger(int iTeam)
     {
         Win.iTeamWon = iTeam;
@@ -135,6 +164,9 @@ public class Main : Node
         GetTree().ChangeSceneTo(nextScene);
     }
 
+    /// <summary>
+    /// Choose the next playable character
+    /// </summary>
     private void ChooseNextPlayer()
     {
         this.iCurrentTeam++;
@@ -155,6 +187,9 @@ public class Main : Node
         EmitSignal(nameof(ChangeCurrentCharacter), this.teams[this.iCurrentTeam][this.iCurrentPlayer[iCurrentTeam]]);
     }
 
+    /// <summary>
+    /// Start the timer
+    /// </summary>
     private void Start()
     {
         this.timeRemaining = this.timePerRound;
@@ -169,6 +204,9 @@ public class Main : Node
         this.Start();
     }
 
+    /// <summary>
+    /// Connect all signals (UI signals, Timer signal)
+    /// </summary>
     private void ConnectSignal()
     {
         Node gameUI = this.GetNode("MainCamera").GetNode("GameUI"); 
