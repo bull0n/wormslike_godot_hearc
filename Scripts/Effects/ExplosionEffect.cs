@@ -16,6 +16,15 @@ public class ExplosionEffect : Sprite
     private static readonly String ANIMATION_NAME = "Explode";
     private static readonly String ANIMATION_FINISHED_SIGNAL = "animation_finished";
     private Area2D explosionArea;
+	private int damage;
+	
+    /// <summary>
+    /// Default constructor
+    /// </summary>
+	public ExplosionEffect()
+	{
+		this.damage = 0;
+	}
 	
     /// <summary>
     /// Initialise the node when the game engine is ready
@@ -27,7 +36,7 @@ public class ExplosionEffect : Sprite
         animationPlayer.Connect(ANIMATION_FINISHED_SIGNAL, this, nameof(this.OnAnimationFinished));
         animationPlayer.Play(ANIMATION_NAME);
         explosionArea = GetNode("ExplosionArea") as Area2D;
-        //explosionArea.Connect("body_entered", this, "CollidTerrain");
+        explosionArea.Connect("body_entered", this, "OnBodyEnter");
     }
 
     /// <summary>
@@ -82,4 +91,30 @@ public class ExplosionEffect : Sprite
     {
         this.QueueFree();
     }
+	
+	/// <summary>
+    /// Detect collisions when rocket explode and apply damage to characters near the explosion
+    /// </summary>
+    /// <param name="body">Object which detect collision</param>
+    private void OnBodyEnter(object body)
+    {
+        // Look for characters and remove some health
+        foreach (Node node in explosionArea.GetOverlappingBodies())
+        {
+            if (node is Character)
+            {
+                Character character = node as Character;
+                character.Health -= damage;
+            }
+        }
+    }
+	
+    /// <summary>
+    /// Get and set damage
+    /// </summary>
+	public int Damage
+	{
+		get {return this.damage; }
+		set {this.damage = value; }
+	}
 }

@@ -12,7 +12,7 @@ using Godot;
 
 public class Rocket : Ammo
 {
-    private static readonly int DAMAGE = 20;
+    private static readonly int DAMAGE = 50;
 	private static readonly int EXPLOSION_SIZE = 4;
 
     private CollisionShape2D collisionObject;
@@ -106,6 +106,7 @@ public class Rocket : Ammo
             ExplosionEffect explosionEffect = GameResources.GetInstance().Get<ExplosionEffect>();
             explosionEffect.SetGlobalPosition(this.GlobalPosition);
             explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
+			explosionEffect.Damage = DAMAGE;
             this.GetTree().GetRoot().GetNode("Main").CallDeferred("add_child", explosionEffect);
             //this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
 

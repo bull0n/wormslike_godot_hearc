@@ -13,7 +13,7 @@ using System.Timers;
 
 public class Grenade : Ammo
 {
-    private static readonly int DAMAGE = 35;
+    private static readonly int DAMAGE = 70;
 	private static readonly int EXPLOSION_SIZE = 5;
 	private static readonly int TIME = 5000;
 	
@@ -92,6 +92,7 @@ public class Grenade : Ammo
         ExplosionEffect explosionEffect = GameResources.GetInstance().Get<ExplosionEffect>();
         explosionEffect.SetGlobalPosition(this.GlobalPosition);
         explosionEffect.SetScale(Vector2.One * EXPLOSION_SIZE);
+		explosionEffect.Damage = DAMAGE;
         this.GetTree().GetRoot().GetNode("Main").AddChild(explosionEffect);
 
         this.QueueFree();

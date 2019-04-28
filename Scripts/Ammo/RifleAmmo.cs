@@ -12,7 +12,7 @@ using System;
 
 public class RifleAmmo : Ammo
 {
-    private static readonly int DAMAGE = 10;
+    private static readonly int DAMAGE = 35;
 
     private CollisionShape2D collisionObject;
 
