@@ -11,21 +11,19 @@ numbersections: true
 documentclass: scrartcl
 geometry: margin=2.5cm
 header-includes: |
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead[R]{Lucas Bulloni, Malik Fleury}
-\usepackage{float}
-\floatplacement{figure}{H}
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[R]{Lucas Bulloni, Malik Fleury}
+      \usepackage{float}
+      \floatplacement{figure}{H}
 ---
 
 # Description
 
 BArc (Bomb Arc) est un jeu similaire à Worms. Deux équipe s'affrontent et doivent s'entruer. Chaque équipe comporte un certain nombre de personnages. Une fois que tous les personnages d'une équipe sont morts, la partie est terminée.
-Les personnages on accès à 3 armes qui sont:
+Les personnages on accès à 3 armes différentes
 
-- Grenade
-- Lance roquette
-- Fusil
+![Barc](./Barc.png "Barc"){width=50%}
 
 # Fonctionnalités
 
@@ -63,11 +61,14 @@ Apparition des tombes lors de la mort des personnages. Les tombes sont affectée
 
 Il est possible de déplacer ainsi que d'effecuter un zoom sur la caméra afin d'avoir une meilleure vision sur le champs de bataille.
 
+# Améliorations
+
+- Régler les problèmes de ralentissements du terrain
+  - Choisir une autre technique de gestion de destruction du terrain (marching cube, utilisations de masques)
+- Appliquer des forces sur les personnages afin qu'ils éjectent lorsqu'ils sont proches d'une explosion
+- Créer de grandes maps
+
 # Outils utilisés
 
 - Godot 3.1 (moteur de jeux open source)
 - Blender 2.79 (logiciel de modélisation open source)
-
-# Ressources
-
-https://kenney.nl/assets
